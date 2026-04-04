@@ -379,21 +379,41 @@ const baseDatosProblemas = {
     "electrica": [
         {
             titulo: "Problema 1: Fuerza en el deuterio",
-            enunciado: "El deuterio es el isótopo del hidrógeno que contiene un neutrón. El agua pesada \\( \\ce{D2O} \\) se emplea en los reactores nucleares para ralentizar los neutrones y controlar su crecimiento. Sabiendo que la distancia entre el protón y el electrón es de 0,5 Å, determina: </br> a) La fuerza eléctrica existente entre el protón y el electrón. <br> b) La aceleración inicial del electrón. <br> c) La distancia a la que debe situarse el electrón para reducir la fuerza de atracción a la cuarta parte. <br> Datos. \\( \\ce{k = 9 \\cdot 10^9 N \\cdot m^2 \\cdot C^{−2} ; q_e = 1,602 \\cdot 10^{−19} C; q_p = 1,602 \\cdot 10^{−19} C; m_e = 9,1 \\cdot 10^{−31}  kg} \\) ",
-            // solucion: `
-            //     <div class='paso'>
-            //         <strong>a)</strong> \\( F = K \\frac{q_p \\cdot q_e}{r^2} = 9 \\cdot 10^9 \\frac{(1,6 \\cdot 10^{-19})^2}{(0,5 \\cdot 10^{-10})^2} \\)<br>
-            //         <span class='resultado'>Fuerza F = 9,24 · 10⁻⁸ N</span>
-            //     </div>
-            //     <div class='paso'>
-            //         <strong>b)</strong> \\( a = F/m_e = 9,24 \\cdot 10^{-8} / 9,1 \\cdot 10^{-31} \\)<br>
-            //         <span class='resultado'>a = 1,015 · 10²³ m/s²</span>
-            //     </div>
-            //     <div class='paso'>
-            //         <strong>c)</strong> Al ser inversamente proporcional al cuadrado, la distancia debe ser el doble.<br>
-            //         <span class='resultado'>r = 1 Å</span>
-            //     </div>
-            // `
+            enunciado: "El deuterio es el isótopo del hidrógeno que contiene un neutrón. El agua pesada \\( \\ce{D2O} \\) se emplea en los reactores nucleares para ralentizar los neutrones y controlar su crecimiento. Sabiendo que la distancia entre el protón y el electrón es de 0,5 Å, determina: </br> a) La fuerza eléctrica existente entre el protón y el electrón. <br> b) La aceleración inicial del electrón. <br> c) La distancia a la que debe situarse el electrón para reducir la fuerza de atracción a la cuarta parte. <br> Datos. \\( \\ce{k = 9 \\cdot 10^9 N \\cdot m^2 \\cdot C^{−2} ; q_e = 1,602 \\cdot 10^{−19} C; q_p = 1,602 \\cdot 10^{−19} C; m_e = 9,1 \\cdot 10^{−31}  kg; 1 \\\ Å = 1 \\cdot 10^{-10}  m} \\) ",
+            solucion: `
+                <div class='paso'>
+                    <strong>Paso previo: Unidades al Sistema Internacional y análisis:</strong><br>
+                    El núcleo del deuterio tiene un protón y un neutrón. Como el neutrón no tiene carga, la interacción eléctrica se produce exclusivamente entre el protón y el electrón.<br>
+                    Antes de operar, debemos pasar la distancia (dada en Angstroms, Å) a metros:<br>
+                    \\[ r = 0,5 \\text{ Å } \\cdot \\frac{10^{-10} \\text{ m}}{1 \\text{ Å }} = 0,5 \\cdot 10^{-10} \\text{ m} = 5 \\cdot 10^{-11} \\text{ m} \\]
+                </div>
+                <div class='paso'>
+                    <strong>a) Fuerza eléctrica entre el protón y el electrón:</strong><br>
+                    Aplicamos la Ley de Coulomb. Dado que queremos el módulo de la fuerza (la intensidad de la atracción), usamos los valores absolutos de las cargas:<br>
+                    \\[ F = k \\cdot \\frac{|q_p \\cdot q_e|}{r^2} \\]<br>
+                    Sustituimos los datos suministrados en el problema:<br>
+                    \\[ F = 9 \\cdot 10^9 \\cdot \\frac{(1,602 \\cdot 10^{-19}) \\cdot (1,602 \\cdot 10^{-19})}{(0,5 \\cdot 10^{-10})^2} \\]<br>
+                    \\[ F = 9 \\cdot 10^9 \\cdot \\frac{2,566 \\cdot 10^{-38}}{0,25 \\cdot 10^{-20}} = 9 \\cdot 10^9 \\cdot 10,264 \\cdot 10^{-18} \\]<br>
+                    <span class='resultado'>Resultado:  &nbsp \\( F \\approx 9,24 \\cdot 10^{-8} \\text{ N} \\)</span>
+                </div>
+                <div class='paso'>
+                    <strong>b) Aceleración inicial del electrón:</strong><br>
+                    Para relacionar la fuerza eléctrica con el movimiento de la partícula, recurrimos a la Segunda Ley de Newton (\\( F = m \\cdot a \\)). Despejamos la aceleración usando la masa del electrón:<br>
+                    \\[ a = \\frac{F}{m_e} = \\frac{9,24 \\cdot 10^{-8} \\text{ N}}{9,1 \\cdot 10^{-31} \\text{ kg}} \\]<br>
+                    \\[ a \\approx 1,015 \\cdot 10^{23} \\text{ m/s}^2 \\]<br>
+                    <em>*Nota del profesor: Esta aceleración es brutalmente inmensa, lo cual es típico en física de partículas debido a que su masa es increíblemente pequeña.</em><br>
+                    <span class='resultado'>Resultado:  &nbsp \\( a \\approx 1,015 \\cdot 10^{23} \\text{ m/s}^2 \\)</span>
+                </div>
+                <div class='paso'>
+                    <strong>c) Distancia para reducir la fuerza a la cuarta parte:</strong><br>
+                    Este es un apartado de razonamiento matemático (ley de la inversa del cuadrado). La fuerza depende inversamente del cuadrado de la distancia (\\( F \\propto \\frac{1}{r^2} \\)).<br>
+                    Si queremos que la nueva fuerza sea \\( \\frac{F}{4} \\), el denominador de la fracción debe multiplicarse por 4.<br>
+                    Para que \\( r^2 \\) se multiplique por 4, la propia distancia \\( r \\) debe multiplicarse por 2 (ya que \\( 2^2 = 4 \\)).<br>
+                    Por tanto, la nueva distancia debe ser el doble de la original:<br>
+                    \\[ r' = 2 \\cdot r = 2 \\cdot 0,5 \\text{ \\AA} \\]<br>
+                    <span class='resultado'>Resultado:  &nbsp \\( r' = 1,0 \\text{ \\AA} \\) (o \\( 10^{-10} \\text{ m} \\))</span>
+                </div>
+            `
         },
         {
             titulo: "Problema 2: Cargas en triángulo",
