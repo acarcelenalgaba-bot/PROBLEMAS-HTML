@@ -418,15 +418,42 @@ const baseDatosProblemas = {
         {
             titulo: "Problema 2: Cargas en triángulo",
             enunciado: "Tres cargas eléctricas de 5 nC, dos positivas fijas y una negativa libre, se sitúan en los vértices de un triángulo equilátero de 60 cm de lado. Sabiendo que la masa de la carga negativa es de 5 g, determina: <br> a) En que dirección comienza a moverse. <br> b) ¿Qué movimiento realiza la carga libre a lo largo del tiempo? <br> c) Calcula la fuerza que experimenta la carga libre en el vértice del triángulo. <br> d) Obtén la aceleración en dicho vértice. <div style='text-align: center; margin-bottom: 20px;'> <img src='img/din_6.png' style='max-width: 80%;height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);'> </div> <br> \\( \\ce{Datos: k = 9 \\cdot 10^9 N \\cdot m^2 \\cdot C^{−2}} \\)",
-            // solucion: `
-            //     <div class='paso'>
-            //         <strong>a)</strong> Se mueve verticalmente hacia abajo atraída por las cargas positivas de la base.<br>
-            //         <strong>c)</strong> Sumando vectorialmente las dos fuerzas atractivas proyectadas en el eje Y.<br>
-            //         <span class='resultado'>F = 1,08 · 10⁻⁶ N</span><br>
-            //         <strong>d)</strong> \\( a = F/m = 1,08 \\cdot 10^{-6} / 0,005 \\)<br>
-            //         <span class='resultado'>a = 2,16 · 10⁻⁴ m/s²</span>
-            //     </div>
-            // `
+            solucion: `
+                <div class='paso'>
+                    <strong>Paso previo: Unidades al Sistema Internacional:</strong><br>
+                    Antes de empezar, pasamos todos los datos al S.I. para evitar errores con la constante de Coulomb (\\(k\\)):<br>
+                    - Cargas: \\( q = 5 \\text{ nC} = 5 \\cdot 10^{-9} \\text{ C} \\)<br>
+                    - Distancia: \\( L = 60 \\text{ cm} = 0,6 \\text{ m} \\)<br>
+                    - Masa: \\( m = 5 \\text{ g} = 5 \\cdot 10^{-3} \\text{ kg} \\)
+                </div>
+                <div class='paso'>
+                    <strong>a) Dirección en la que comienza a moverse:</strong><br>
+                    La carga superior es negativa y las de la base son positivas, por lo que sufre una fuerza de atracción hacia cada una de ellas.<br>
+                    Al ser un triángulo equilátero y tener las cargas de la base el mismo valor, el sistema es simétrico. Las componentes horizontales de estas dos fuerzas de atracción son iguales y de sentido contrario, por lo que se anulan entre sí.<br>
+                    <span class='resultado'>Resultado: &nbsp Las componentes verticales se suman, apuntando hacia abajo. La carga libre comenzará a moverse en línea recta hacia abajo, siguiendo la mediatriz del lado que une las cargas fijas.</span>
+                </div>
+                <div class='paso'>
+                    <strong>b) Movimiento a lo largo del tiempo:</strong><br>
+                    Al moverse hacia abajo, pasará por la línea que une las cargas fijas. En ese punto, la fuerza neta se hace cero por un instante, pero la partícula lleva inercia (velocidad), así que lo cruzará.<br>
+                    Una vez por debajo de las cargas positivas, estas la atraerán hacia arriba, frenándola hasta detenerla y volviendo a tirar de ella hacia el centro.<br>
+                    <span class='resultado'>Resultado: &nbsp Realizará un movimiento oscilatorio continuo de arriba a abajo a lo largo del eje de simetría vertical (suponiendo que no hay rozamiento ni otras pérdidas de energía).</span>
+                </div>
+                <div class='paso'>
+                    <strong>c) Fuerza que experimenta en el vértice:</strong><br>
+                    Calculamos la fuerza de atracción (en módulo) que ejerce UNA de las cargas positivas sobre la negativa mediante la Ley de Coulomb:<br>
+                    \\[ F_1 = k \\cdot \\frac{|q_1 \\cdot q_2|}{L^2} = 9 \\cdot 10^9 \\cdot \\frac{(5 \\cdot 10^{-9}) \\cdot (5 \\cdot 10^{-9})}{(0,6)^2} \\]<br>
+                    \\[ F_1 = 9 \\cdot 10^9 \\cdot \\frac{25 \\cdot 10^{-18}}{0,36} = \\frac{225 \\cdot 10^{-9}}{0,36} = 6,25 \\cdot 10^{-7} \\text{ N} \\]<br>
+                    Dado que el triángulo es equilátero, el ángulo que forma cada fuerza con el eje vertical (la bisectriz) es de \\(30^\\circ\\). La fuerza total neta será el doble de la componente vertical de \\(F_1\\):<br>
+                    \\[ F_{total} = 2 \\cdot F_y = 2 \\cdot F_1 \\cdot \\cos(30^\\circ) = 2 \\cdot 6,25 \\cdot 10^{-7} \\cdot \\frac{\\sqrt{3}}{2} \\]<br>
+                    <span class='resultado'>Resultado: &nbsp \\( F_{total} = 6,25 \\cdot \\sqrt{3} \\cdot 10^{-7} \\approx 1,08 \\cdot 10^{-6} \\text{ N} \\) (hacia abajo)</span>
+                </div>
+                <div class='paso'>
+                    <strong>d) Aceleración en dicho vértice:</strong><br>
+                    Para hallar la aceleración, simplemente aplicamos la Segunda Ley de Newton (\\( F = m \\cdot a \\)):<br>
+                    \\[ a = \\frac{F_{total}}{m} = \\frac{1,0825 \\cdot 10^{-6} \\text{ N}}{5 \\cdot 10^{-3} \\text{ kg}} \\]<br>
+                    <span class='resultado'>Resultado: &nbsp \\( a \\approx 2,165 \\cdot 10^{-4} \\text{ m/s}^2 \\) (hacia abajo)</span>
+                </div>
+            `
         },
         {
             titulo: "Problema 3: Radiación cósmica",
