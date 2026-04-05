@@ -2,24 +2,24 @@ const baseDatosProblemas = {
     "gravedad": [
         {
             titulo: "Problema 1: El peso y la estación MIR",
-            enunciado: "La Tierra es un planeta cuya masa es de \\(\\ce{5,95 \\cdot 10^{24}} \\) kg y su radio medio 6371 km. Calcula el peso que tendría un hombre de masa 80 kg en los siguientes lugares de la Tierra: <br> a) Superficie terrestre a nivel del mar. <br> b) Subido a la cima del monte Everest, cuya altura es de 8848 m. <br> c) En la estación espacial internacional (MIR) cuando nos encontramos a la altura de 200 km. <br> d) Sabiendo que la masa del MIR son 129,7 toneladas, halla la velocidad orbital del MIR. <br> e) Desde el MIR observamos un cuerpo no identificado que se mueve con velocidad constante en el espacio. ¿Es necesario que exista una fuerza para que se mantenga este movimiento? Justifícalo.",
+            enunciado: "La Tierra es un planeta cuya masa es de \\(\\ce{5,95 \\cdot 10^{24}} \\) kg y su radio medio 6371 km. Calcula el peso que tendría un hombre de masa 80 kg en los siguientes lugares de la Tierra: <br> a) Superficie terrestre a nivel del mar. <br> b) Subido a la cima del monte Everest, cuya altura es de 8848 m. <br> c) En la estación espacial internacional (MIR) cuando nos encontramos a la altura de 200 km. <br> d) Sabiendo que la masa del MIR son 129,7 toneladas, halla la velocidad orbital del MIR. <br> e) Desde el MIR observamos un cuerpo no identificado que se mueve con velocidad constante en el espacio. ¿Es necesario que exista una fuerza para que se mantenga este movimiento? Justifícalo. <br>Datos: &nbsp \\(\\ce{G = 6,67 \\cdot 10^{-11} N \\cdot m^2 \\cdot kg^{-2} } \\)",
             solucion: `
                 <div class='paso'>
                     <strong>a) En la superficie:</strong><br>
-                    Aplicamos la Ley de Gravitación Universal de Newton:  &nbsp \\( P = G \\dfrac{M_T \\cdot m}{R_T^2} \\)<br>
-                    \\[ P = 6,67 \\cdot 10^{-11} \\frac{5,95 \\cdot 10^{24} \\cdot 80}{(6,371 \\cdot 10^6)^2} \\]<br>
+                    Aplicamos la Ley de Gravitación Universal de Newton:  &nbsp \\( P = G \\cdot \\dfrac{M_T \\cdot m}{R_T^2} \\)<br>
+                    \\[ P = 6,67 \\cdot 10^{-11} \\cdot \\frac{5,95 \\cdot 10^{24} \\cdot 80}{(6,371 \\cdot 10^6)^2} \\]<br>
                     <span class='resultado'>Resultado:  &nbsp P = 782 N</span>
                 </div>
                 <div class='paso'>
                     <strong>b) En el Everest:</strong><br>
                     Sumamos la altura al radio: &nbsp \\( r = R_T + h = 6371000 + 8848 = 6379848 \\text{ m}\\)<br>
-                    \\[ P = 6,67 \\cdot 10^{-11} \\frac{5,95 \\cdot 10^{24} \\cdot 80}{(6379848)^2} \\]<br>
+                    \\[ P = 6,67 \\cdot 10^{-11} \\cdot \\frac{5,95 \\cdot 10^{24} \\cdot 80}{(6379848)^2} \\]<br>
                     <span class='resultado'>Resultado:  &nbsp P = 780 N</span>
                 </div>
                 <div class='paso'>
                     <strong>c) En la estación MIR (h = 200 km):</strong><br>
                     \\( r = 6371000 + 200000 = 6571000 \\text{ m}\\)<br>
-                    \\[ P = 6,67 \\cdot 10^{-11} \\frac{5,95 \\cdot 10^{24} \\cdot 80}{(6571000)^2} \\]<br>
+                    \\[ P = 6,67 \\cdot 10^{-11} \\cdot \\frac{5,95 \\cdot 10^{24} \\cdot 80}{(6571000)^2} \\]<br>
                     <span class='resultado'>Resultado:  &nbsp P = 735 N</span>
                 </div>
                 <div class='paso'>
@@ -39,22 +39,37 @@ const baseDatosProblemas = {
             enunciado: "Los antiguos griegos consideraban la Luna como una Diosa. Selene es la conductora del carro de la la Luna: después de que Helios, el dios del Sol, termine su viaje a través del cielo, Selene comienza el suyo cuando la noche cae sobre la Tierra. La Luna orbita alrededor de la Tierra en órbitas prácticamente circulares. La distancia entre la Tierra y la Luna es de 384000 km. Conociendo las masas de la Tierra (\\( \\ce{M_T = 5,97 \\cdot 10^{24}}\\) kg) y de la Luna (\\( \\ce{M_L = 7,35 \\cdot 10^{22} } \\) kg), determina: <br> a) La fuerza gravitatoria entre la Tierra y la Luna. <br> b) La velocidad orbital de la Luna. <br> c) El punto de la línea que las une donde sería nula la fuerza neta sobre cualquier masa (despreciando las fuerzas gravitatorias provenientes de los demás cuerpos celestes).",
             solucion: `
                 <div class='paso'>
-                    <strong>a) Fuerza gravitatoria:</strong><br>
-                    Aplicamos la Ley de Gravitación Universal de Newton: 
-                    \\[ F = G \\frac{M_T \\cdot M_L}{d^2} = 6,67 \\cdot 10^{-11} \\frac{5,97 \\cdot 10^{24} \\cdot 7,35 \\cdot 10^{22}}{(3,84 \\cdot 10^8)^2} \\]<br>
-                    <span class='resultado'>Resultado:  &nbsp \\( F = 1,98 \\cdot 10^{20} \\) N</span>
+                    <strong>Paso previo: ¡Cuidado con las unidades!</strong><br>
+                    Antes de sustituir a lo loco, debemos asegurarnos de que todo está en el Sistema Internacional. Las masas ya están en kilogramos, pero la distancia nos la dan en kilómetros. ¡Trampa clásica!<br>
+                    \\( d = 384.000 \\text{ km} = 384.000.000 \\text{ m} = 3,84 \\cdot 10^8 \\text{ m} \\)
                 </div>
                 <div class='paso'>
-                    <strong>b) Velocidad orbital:</strong><br>
-                    Igualamos fuerza gravitatoria a fuerza centrípeta (\\(F_g = F_c\\)):<br>
-                    \\[ v = \\sqrt{G \\cdot \\frac {M_T}{d}} = \\sqrt{ 6,67 \\cdot 10^{-11} \\frac{5,97 \\cdot 10^{24} }{3,84 \\cdot 10^8} } \\]<br>
-                    <span class='resultado'>Resultado:  &nbsp v = 1018 m/s</span>
+                    <strong>a) Fuerza gravitatoria entre la Tierra y la Luna:</strong><br>
+                    Aplicamos la Ley de Gravitación Universal de Newton. Recuerda que esta fuerza es mutua: la Tierra tira de la Luna con exactamente la misma fuerza con la que la Luna tira de la Tierra (3ª Ley de Newton).<br>
+                    \\[ F = G \\cdot \\frac{M_T \\cdot M_L}{d^2} \\]<br>
+                    Sustituimos nuestros inmensos números (¡cuidado al usar la notación científica en la calculadora!):<br>
+                    \\[ F = 6,67 \\cdot 10^{-11} \\cdot \\frac{5,97 \\cdot 10^{24} \\cdot 7,35 \\cdot 10^{22}}{(3,84 \\cdot 10^8)^2} = 6,67 \\cdot 10^{-11} \\cdot \\frac{4,38 \\cdot 10^{47}}{1,47 \\cdot 10^{17}} \\]<br>
+                    <span class='resultado'>Resultado:  &nbsp \\( F \\approx 1,98 \\cdot 10^{20} \\text{ N} \\)</span>
                 </div>
                 <div class='paso'>
-                    <strong>c) Punto de fuerza nula:</strong><br>
-                    Igualamos atracciones y sacamos raíces:<br>
+                    <strong>b) Velocidad orbital de la Luna:</strong><br>
+                    ¿Por qué la Luna no se cae contra la Tierra si hay tanta fuerza atrayéndola? Porque está girando. Para mantener una órbita circular se necesita una fuerza centrípeta que actúe de "cuerda invisible", y en el espacio, la gravedad hace ese trabajo. Por tanto, igualamos la fuerza gravitatoria a la fuerza centrípeta (\\(F_g = F_c\\)):<br>
+                    \\[ G \\cdot \\frac{M_T \\cdot M_L}{d^2} = M_L \\cdot \\frac{v^2}{d} \\]<br>
+                    Fíjate que la masa de la Luna (\\(M_L\\)) y una de las distancias (\\(d\\)) se cancelan a ambos lados. Despejamos la velocidad:<br>
+                    \\[ v = \\sqrt{G \\cdot \\frac{M_T}{d}} = \\sqrt{ 6,67 \\cdot 10^{-11} \\cdot \\frac{5,97 \\cdot 10^{24}}{3,84 \\cdot 10^8} } = \\sqrt{1.036.960} \\]<br>
+                    <span class='resultado'>Resultado:  &nbsp \\( v \\approx 1018,3 \\text{ m/s} \\) (¡Más de 1 km por segundo!)</span>
+                </div>
+                <div class='paso'>
+                    <strong>c) Punto de fuerza neta nula (El "tirón" equilibrado):</strong><br>
+                    Buscamos un punto intermedio donde, si colocamos una nave espacial de masa \\(m\\), el tirón de la Tierra hacia un lado sea exactamente igual al tirón de la Luna hacia el otro. Si ese punto está a una distancia \\(x\\) de la Tierra, estará a una distancia \\(d - x\\) de la Luna.<br>
+                    \\[ F_{Tierra} = F_{Luna} \\implies G \\cdot \\frac{M_T \\cdot m}{x^2} = G \\cdot \\frac{M_L \\cdot m}{(d-x)^2} \\]<br>
+                    Las \\(G\\) y la masa de la nave (\\(m\\)) se cancelan. Nos queda:<br>
+                    \\[ \\frac{M_T}{x^2} = \\frac{M_L}{(d-x)^2} \\]<br>
+                    <em>*Truco:</em> ¡No desarrolles el cuadrado del denominador o te quedará una ecuación de segundo grado horrible! Como todo está al cuadrado, hacemos la raíz cuadrada en ambos lados de la igualdad:<br>
                     \\[ \\frac{\\sqrt{M_T}}{x} = \\frac{\\sqrt{M_L}}{d-x} \\]<br>
-                    <span class='resultado'>Resultado:  &nbsp \\( x = 3,46 \\cdot 10^{8} \\) m (desde la Tierra)</span>
+                    Sustituimos las masas y multiplicamos en cruz para despejar \\(x\\):<br>
+                    \\[ \\frac{2,44 \\cdot 10^{12}}{x} = \\frac{2,71 \\cdot 10^{11}}{3,84 \\cdot 10^8 - x} \\implies 9,38 \\cdot 10^{20} - 2,44 \\cdot 10^{12}x = 2,71 \\cdot 10^{11}x \\]<br>
+                    <span class='resultado'>Resultado:  &nbsp \\( x \\approx 3,46 \\cdot 10^{8} \\text{ m} \\) (medido desde el centro de la Tierra)</span>
                 </div>
             `
         },
@@ -83,22 +98,22 @@ const baseDatosProblemas = {
                     <strong>a) Peso en Júpiter:</strong> <br>
                     El "peso" no es otra cosa que la fuerza de atracción gravitatoria que ejerce un planeta sobre un objeto en su superficie. Para ello, aplicamos directamente la Ley de Gravitación Universal de Newton, asumiendo que la distancia entre los centros de masa es el radio del planeta. Sustituimos nuestros datos: <br>
                     Radio = \\( \\ce{ \\dfrac{142984}{2} = 71492 \\ km = 71492000 \\ m } \\) <br>
-                    \\[ P_J = G \\frac{M_J \\cdot m}{R_J^2} = 6,67 \\cdot 10^{-11} \\frac{1,889 \\cdot 10^{27} \\cdot 100 }{(71492000)^2} \\]<br>
+                    \\[ P_J = G \\cdot \\frac{M_J \\cdot m}{R_J^2} = 6,67 \\cdot 10^{-11} \\cdot \\frac{1,889 \\cdot 10^{27} \\cdot 100 }{(71492000)^2} \\]<br>
                     <span class='resultado'>Resultado: &nbsp; P = 2465 N</span>
                 </div>
                 <div class='paso'>
                     <strong>b) Peso en Ganímedes:</strong><br>
                     Aplicamos exactamente la misma lógica matemática, pero cambiando al protagonista: ahora estamos en la superficie de la luna Ganímedes. <br>
-                    \\[ P_G = G \\frac{M_G \\cdot m}{R_G^2} \\]
+                    \\[ P_G = G \\cdot \\frac{M_G \\cdot m}{R_G^2} \\]
                     Sustituimos:
                     Radio = \\(  \\dfrac{5262}{2} = 2631 \\ km = 2631000 \\ m \\) <br>
-                    \\[ P_G = G \\frac{M_G \\cdot m}{R_G^2} = 6,67 \\cdot 10^{-11} \\frac{1,482 \\cdot 10^{23} \\cdot 100 }{(2631000)^2} \\]<br>
+                    \\[ P_G = G \\cdot \\frac{M_G \\cdot m}{R_G^2} = 6,67 \\cdot 10^{-11} \\cdot \\frac{1,482 \\cdot 10^{23} \\cdot 100 }{(2631000)^2} \\]<br>
                     <span class='resultado'>Resultado: &nbsp; P = 177,5 N</span>
                 </div>
                 <div class='paso'>
                     <strong>c) Radio orbital:</strong> <br>
                     Para que un cuerpo (Ganímedes) se mantenga en órbita circular alrededor de otro (Júpiter), la fuerza gravitatoria que lo atrae debe actuar como fuerza centrípeta. Esta es la condición de equilibrio dinámico de las órbitas. F gravitatoria ​= F centrípeta​ <br>
-                    \\[ G \\frac{M_J \\cdot M_G}{r^2} =  M_G \\frac{v^2}{r} \\] <br>
+                    \\[ G \\cdot \\frac{M_J \\cdot M_G}{r^2} =  M_G \\cdot \\frac{v^2}{r} \\] <br>
                     La masa de Ganímedes (\\(M_G\\)​) y uno de los radios (r) se cancelan en ambos lados de la ecuación. Nos queda: <br>
                     \\[ r = \\frac{G \\cdot M_J}{v^2} = \\frac{6,67 \\cdot 10^{-11} \\cdot 1,482 \\cdot 10^{23} }{(1,18 \\cdot 10^{4})^2} \\]<br>
                     <span class='resultado'>Resultado: &nbsp; r = 1,07 · 10⁹ m</span>
@@ -108,7 +123,7 @@ const baseDatosProblemas = {
                     <iframe src="simulador_jupiter.html" width="100%" height="620" style="border:1px solid #ddd; border-radius:8px; background:#fff;"></iframe>
                     Queremos colocar el asteroide en un punto entre Júpiter y Ganímedes donde las fuerzas de atracción se anulen. Es decir, Júpiter tira hacia la izquierda con la misma fuerza que Ganímedes tira hacia la derecha. <br> Llamamos x a la distancia desde el asteroide hasta Ganímedes. La distancia desde el asteroide hasta Júpiter será d−x. <br> 
                     Igualamos los módulos de ambas fuerzas gravitatorias:
-                    \\[ G \\frac{M_J \\cdot m}{(d - x)^2} =  G \\frac{M_G \\cdot m}{x^2} \\] <br>
+                    \\[ G \\cdot \\frac{M_J \\cdot m}{(d - x)^2} =  G \\cdot \\frac{M_G \\cdot m}{x^2} \\] <br>
                     Simplificamos G y m en ambos lados:
                     \\[ \\frac{M_J}{(d - x)^2} =  \\frac{M_G}{x^2} \\] <br>
                     Truco de examen: Para evitar resolver una ecuación de segundo grado farragosa, aplicamos la raíz cuadrada a ambos lados de la igualdad: <br>
