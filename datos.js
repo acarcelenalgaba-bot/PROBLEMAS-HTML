@@ -1,7 +1,7 @@
 const baseDatosProblemas = {
     "gravedad": [
         {
-            titulo: "Problema 1: El peso y la estación MIR, prueba",
+            titulo: "Problema 1: El peso y la estación MIR",
             enunciado: "La Tierra es un planeta cuya masa es de \\(\\ce{5,95 \\cdot 10^{24}} \\) kg y su radio medio 6371 km. Calcula el peso que tendría un hombre de masa 80 kg en los siguientes lugares de la Tierra: <br> a) Superficie terrestre a nivel del mar. <br> b) Subido a la cima del monte Everest, cuya altura es de 8848 m. <br> c) En la estación espacial internacional (MIR) cuando nos encontramos a la altura de 200 km. <br> d) Sabiendo que la masa del MIR son 129,7 toneladas, halla la velocidad orbital del MIR. <br> e) Desde el MIR observamos un cuerpo no identificado que se mueve con velocidad constante en el espacio. ¿Es necesario que exista una fuerza para que se mantenga este movimiento? Justifícalo. <br>Datos: &nbsp \\(\\ce{G = 6,67 \\cdot 10^{-11} N \\cdot m^2 \\cdot kg^{-2} } \\)",
             solucion: `
                 <div class='paso'>
