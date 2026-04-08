@@ -652,6 +652,18 @@ const baseDatosProblemas = {
             // `
         }    
     ],
+    "plano": [
+        {
+            titulo: "Problema 1: Apertura de puerta",
+            enunciado: "Para abrir una puerta, tenemos que hacer una fuerza de 2 N a 40 cm de las bisagras. Calcula: <br> a) El momento de esta fuerza. <br> b) Averigua si aplicando una fuerza de 3 N a una distancia de 20 cm se abrirá o no la puerta.",
+            // solucion: `
+            //     <div class='paso'>
+            //         \\( a = g(\\sin 25^\\circ - 0,35 \\cos 25^\\circ) = 1,03 \\text{ m/s}^2 \\)<br>
+            //         \\( 20 = 5 + 1,03 \\cdot t \\implies t = 14,56 \\text{ s} \\)
+            //     </div>
+            // `
+        }
+    ],
     "momento": [
         {
             titulo: "Problema 1: Pelota de tenis",
