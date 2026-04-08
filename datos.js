@@ -56,7 +56,7 @@ const baseDatosProblemas = {
                     ¿Por qué la Luna no se cae contra la Tierra si hay tanta fuerza atrayéndola? Porque está girando. Para mantener una órbita circular se necesita una fuerza centrípeta que actúe de "cuerda invisible", y en el espacio, la gravedad hace ese trabajo. Por tanto, igualamos la fuerza gravitatoria a la fuerza centrípeta (\\(F_g = F_c\\)):<br>
                     \\[ G \\cdot \\frac{M_T \\cdot M_L}{d^2} = M_L \\cdot \\frac{v^2}{d} \\]<br>
                     Fíjate que la masa de la Luna (\\(M_L\\)) y una de las distancias (\\(d\\)) se cancelan a ambos lados. Despejamos la velocidad:<br>
-                    \\[ v = \\sqrt{G \\cdot \\frac{M_T}{d}} = \\sqrt{ 6,67 \\cdot 10^{-11} \\cdot \\frac{5,97 \\cdot 10^{24}}{3,84 \\cdot 10^8} } = \\sqrt{1.036.960} \\]<br>
+                    \\[ v = \\sqrt{G \\cdot \\frac{M_T}{d}} = \\sqrt{ 6,67 \\cdot 10^{-11} \\cdot \\frac{5,97 \\cdot 10^{24}}{3,84 \\cdot 10^8} } = \\sqrt{1036960} \\]<br>
                     <span class='resultado'>Resultado:  &nbsp \\( v \\approx 1018,3 \\text{ m/s} \\) (¡Más de 1 km por segundo!)</span>
                 </div>
                 <div class='paso'>
@@ -67,8 +67,10 @@ const baseDatosProblemas = {
                     \\[ \\frac{M_T}{x^2} = \\frac{M_L}{(d-x)^2} \\]<br>
                     <em>*Truco:</em> ¡No desarrolles el cuadrado del denominador o te quedará una ecuación de segundo grado horrible! Como todo está al cuadrado, hacemos la raíz cuadrada en ambos lados de la igualdad:<br>
                     \\[ \\frac{\\sqrt{M_T}}{x} = \\frac{\\sqrt{M_L}}{d-x} \\]<br>
-                    Sustituimos las masas y multiplicamos en cruz para despejar \\(x\\):<br>
-                    \\[ \\frac{2,44 \\cdot 10^{12}}{x} = \\frac{2,71 \\cdot 10^{11}}{3,84 \\cdot 10^8 - x} \\implies 9,38 \\cdot 10^{20} - 2,44 \\cdot 10^{12}x = 2,71 \\cdot 10^{11}x \\]<br>
+                    Sustituimos las masas y despejamos \\(x\\):<br>
+                    \\[ \\frac{2,44 \\cdot 10^{12}}{x} = \\frac{2,71 \\cdot 10^{11}}{3,84 \\cdot 10^8 - x} \\implies 9,38 \\cdot 10^{20} - 2,44 \\cdot 10^{12} \\cdot  x = 2,71 \\cdot 10^{11} \\cdot  x \\]<br>
+                    \\[ 9,38 \\cdot 10^{20} = 2,44 \\cdot 10^{12} \\cdot  x + 2,71 \\cdot 10^{11} \\cdot x \\implies  9,38 \\cdot 10^{20} = 2,711 \\cdot 10^{12} \\cdot  x \\]<br>
+                    \\[ x = \\frac{9,38 \\cdot 10^{20}}{2,711 \\cdot 10^{12}} \\]<br>
                     <span class='resultado'>Resultado:  &nbsp \\( x \\approx 3,46 \\cdot 10^{8} \\text{ m} \\) (medido desde el centro de la Tierra)</span>
                 </div>
             `
@@ -80,7 +82,7 @@ const baseDatosProblemas = {
                 <tr style="background-color: #f2f2f2;">
                     <th>Cuerpo Celeste</th>
                     <th>Masa (kg)</th>
-                    <th>Radio (km)</th>
+                    <th>Diámetro (km)</th>
                 </tr>
                 <tr>
                     <td><strong>Júpiter</strong></td>
@@ -652,16 +654,180 @@ const baseDatosProblemas = {
             // `
         }    
     ],
-    "plano": [
+    "equilibrio": [
         {
             titulo: "Problema 1: Apertura de puerta",
             enunciado: "Para abrir una puerta, tenemos que hacer una fuerza de 2 N a 40 cm de las bisagras. Calcula: <br> a) El momento de esta fuerza. <br> b) Averigua si aplicando una fuerza de 3 N a una distancia de 20 cm se abrirá o no la puerta.",
-            // solucion: `
-            //     <div class='paso'>
-            //         \\( a = g(\\sin 25^\\circ - 0,35 \\cos 25^\\circ) = 1,03 \\text{ m/s}^2 \\)<br>
-            //         \\( 20 = 5 + 1,03 \\cdot t \\implies t = 14,56 \\text{ s} \\)
-            //     </div>
-            // `
+            solucion: `
+                <div class='paso'>
+                    <strong>Paso 1: Análisis físico y conversión de unidades:</strong><br>
+                    El momento de una fuerza (o torque) es la magnitud que mide la capacidad de una fuerza para producir una rotación. Para trabajar en el Sistema Internacional (S.I.), primero convertimos las distancias de centímetros a metros:<br>
+                    - Caso A: \\( F_1 = 2 \\text{ N} \\) y \\( d_1 = 40 \\text{ cm} = 0,4 \\text{ m} \\).<br>
+                    - Caso B: \\( F_2 = 3 \\text{ N} \\) y \\( d_2 = 20 \\text{ cm} = 0,2 \\text{ m} \\).<br>
+                    La fórmula fundamental es: \\( M = F \\cdot d \\).
+                </div>
+
+                <div class='paso'>
+                    <strong>a) Cálculo del momento inicial</strong><br>
+                    Calculamos el momento aplicado originalmente, que representa el esfuerzo de rotación necesario para abrir la puerta:<br>
+                    \\[ M_1 = F_1 \\cdot d_1 = 2 \\text{ N} \\cdot 0,4 \\text{ m} = 0,8 \\text{ N} \\cdot \\text{m} \\]<br>
+                    <span class='resultado'>Resultado a: El momento de la fuerza es de \\( 0,8 \\text{ N} \\cdot \\text{m} \\).</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>b) Evaluación de la nueva fuerza </strong><br>
+                    Calculamos el momento que se generaría en la segunda situación propuesta:<br>
+                    \\[ M_2 = F_2 \\cdot d_2 = 3 \\text{ N} \\cdot 0,2 \\text{ m} = 0,6 \\text{ N} \\cdot \\text{m} \\]<br>
+                    Para que la puerta se abra, el momento aplicado debe ser igual o mayor al momento inicial requerido (\\( M_1 \\)). Comparando ambos valores:<br>
+                    \\[ 0,6 \\text{ N} \\cdot \\text{m} < 0,8 \\text{ N} \\cdot \\text{m} \\implies M_2 < M_1 \\]<br>
+                    <span class='resultado'>Resultado b: Debido a que el momento generado es menor, la puerta NO se abrirá.</span>
+                </div>
+                `
+        },
+        {
+        titulo: "Problema 2: Par de fuerzas en un volante",
+        enunciado: "Sobre la circunferencia de un volante de 30 cm de radio se aplican dos fuerzas paralelas iguales de 10 N en sentidos contrarios. Calcula: <br> a) ¿Cuánto vale la fuerza resultante? <br> b) ¿Cuánto vale el momento del par de fuerzas? <br> c) ¿Está el volante en equilibrio?",
+        solucion: `
+            <div class='paso'>
+                <strong>Paso 1: Análisis de datos y conversión al S.I.:</strong><br>
+                Identificamos los elementos del sistema. Al ser fuerzas paralelas, iguales y de sentido contrario, forman un par de fuerzas:<br>
+                - Fuerzas: \\( F_1 = F_2 = 10 \\text{ N} \\)<br>
+                - Radio del volante: \\( R = 30 \\text{ cm} = 0,3 \\text{ m} \\)<br>
+                - Brazo del par (distancia entre fuerzas): \\( d = 2 \\cdot R = 0,6 \\text{ m} \\) (ya que las fuerzas se aplican en extremos opuestos de la circunferencia).
+            </div>
+
+            <div class='paso'>
+                <strong>a) ¿Cuánto vale la fuerza resultante?</strong><br>
+                La fuerza resultante (\\( F_R \\)) es la suma vectorial de las fuerzas. Al ser paralelas, de igual magnitud pero sentidos opuestos:<br>
+                \\[ F_R = F_1 - F_2 = 10 \\text{ N} - 10 \\text{ N} = 0 \\text{ N} \\]<br>
+                <span class='resultado'>Resultado: La fuerza resultante es \\( 0 \\text{ N} \\). Esto significa que el volante no se desplazará linealmente.</span>
+            </div>
+
+            <div class='paso'>
+                <strong>b) ¿Cuánto vale el momento del par de fuerzas?</strong><br>
+                El momento de un par de fuerzas (\\( M \\)) se calcula multiplicando una de las fuerzas por la distancia (brazo) que las separa:<br>
+                \\[ M = F \\cdot d \\]<br>
+                \\[ M = 10 \\text{ N} \\cdot 0,6 \\text{ m} = 6 \\text{ N} \\cdot \\text{m} \\]<br>
+                <span class='resultado'>Resultado: El momento del par es \\( 6 \\text{ N} \\cdot \\text{m} \\).</span>
+            </div>
+
+            <div class='paso'>
+                <strong>c) ¿Está el volante en equilibrio?</strong><br>
+                Para que un cuerpo esté en equilibrio total, deben cumplirse dos condiciones:<br>
+                1. Equilibrio de traslación: \\( \\sum F = 0 \\) (Se cumple).<br>
+                2. Equilibrio de rotación: \\( \\sum M = 0 \\) (No se cumple, ya que existe un momento de \\( 6 \\text{ N} \\cdot \\text{m} \\)).<br>
+                <span class='resultado'>Resultado: El volante NO está en equilibrio. Aunque no se desplace, el par de fuerzas provocará que el volante comience a rotar.</span>
+            </div>`
+        },
+        {
+            titulo: "Problema 3: Reparto de carga en una barra",
+            enunciado: "Dos hombres transportan un peso de 2000 N en una barra de 6 metros de longitud (que se considera sin masa) cuyos extremos se apoyan en sus hombros. Si uno solo puede con 900 N, ¿en qué punto debe colocarse el peso?",
+            solucion: `
+                <div class='paso'>
+                    <strong>Paso 1: Análisis de las fuerzas y distancias:</strong><br>
+                    Llamaremos \\( H_1 \\) al hombre que carga menos y \\( H_2 \\) al que carga el resto. <br>
+                    - Longitud total de la barra: \\( L = 6 \\text{ m} \\).<br>
+                    - Fuerza del primer hombre (extremo izquierdo): \\( F_1 = 900 \\text{ N} \\).<br>
+                    - Peso total a transportar: \\( P = 2000 \\text{ N} \\).<br>
+                    - Fuerza del segundo hombre (extremo derecho): \\( F_2 = P - F_1 = 2000 \\text{ N} - 900 \\text{ N} = 1100 \\text{ N} \\).<br>
+                    Llamaremos \\( x \\) a la distancia desde el hombre 1 (900 N) hasta el punto donde se cuelga el peso.
+                </div>
+
+                <div class='paso'>
+                    <strong>Paso 2: Aplicación de la condición de equilibrio de rotación:</strong><br>
+                    Para que la barra esté en equilibrio, elegimos el extremo del primer hombre como punto de giro. La suma de momentos respecto a ese punto debe ser cero:<br>
+                    \\[ \\sum M = 0 \\]<br>
+                    El peso \\( P \\) genera un giro en un sentido y la fuerza del segundo hombre \\( F_2 \\) en sentido contrario a la distancia total de la barra:<br>
+                    \\[ P \\cdot x = F_2 \\cdot L \\]<br>
+                    Sustituimos los valores conocidos:<br>
+                    \\[ 2000 \\text{ N} \\cdot x = 1100 \\text{ N} \\cdot 6 \\text{ m} \\]
+                </div>
+
+                <div class='paso'>
+                    <strong>Paso 3: Resolución de la incógnita:</strong><br>
+                    Despejamos la distancia \\( x \\):<br>
+                    \\[ x = \\frac{1100 \\cdot 6}{2000} \\]<br>
+                    \\[ x = \\frac{6600}{2000} = 3,3 \\text{ m} \\]<br>
+                    <span class='resultado'>Resultado: El peso debe colocarse a <strong>3,3 metros</strong> del hombre que soporta 900 N (o a 2,7 metros del hombre que soporta 1100 N).</span>
+                </div>`
+        },
+        {
+            titulo: "Problema 4: Equilibrio de palancas",
+            enunciado: "Calcula el valor de la fuerza A o la distancia d en cada uno de los tres sistemas mostrados para que se mantenga el equilibrio (suponiendo barra sin peso). <br> <div style='text-align: center; margin-bottom: 20px;'> <img src='img/eq_4.png' style='max-width: 90%;height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);'> </div>",
+            solucion: `
+                <div class='paso'>
+                    <strong>Caso 1: Equilibrio con brazos iguales</strong><br>
+                    <strong>Ecuación aplicada:</strong> \\( F_1 \\cdot d_1 = F_2 \\cdot d_2 \\)<br>
+                    En este primer caso, observamos que el punto de apoyo está centrado respecto a las fuerzas, lo que significa que las distancias (brazos) son idénticas (\\( d_1 = d_2 = d \\)).<br>
+                    Sustituyendo los valores:<br>
+                    \\[ 5 \\text{ N} \\cdot d = A \\cdot d \\]<br>
+                    Para que la igualdad se mantenga, si las distancias son iguales, las fuerzas también deben serlo. Al simplificar \\( d \\) en ambos lados:<br>
+                    <span class='resultado'>Resultado: \\( A = 5 \\text{ N} \\)</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>Caso 2: Equilibrio con fuerzas distintas</strong><br>
+                    <strong>Ecuación aplicada:</strong> \\( F_{izq} \\cdot d_{izq} = F_{der} \\cdot d_{der} \\)<br>
+                    Aquí debemos hallar la distancia necesaria para que una fuerza mayor (15 N) equilibre a una menor (7,5 N).<br>
+                    \\[ 7,5 \\text{ N} \\cdot 20 \\text{ cm} = 15 \\text{ N} \\cdot d \\]<br>
+                    Despejamos la distancia \\( d \\):<br>
+                    \\[ 150 \\text{ N} \\cdot \\text{cm} = 15 \\text{ N} \\cdot d \\implies d = \\frac{150}{15} \\]<br>
+                    <span class='resultado'>Resultado: \\( d = 10 \\text{ cm} \\)</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>Caso 3: Equilibrio de múltiples momentos (Sumatorio)</strong><br>
+                    <strong>Ecuación aplicada:</strong> \\(\\\ \\sum M_{izq} = \\sum M_{der} \\)<br>
+                    Cuando hay varias fuerzas, la suma de los momentos que intentan girar la barra hacia la izquierda debe ser igual a la suma de los que intentan girarla hacia la derecha. <br>
+                    *Importante:* Las distancias se miden siempre desde el punto de apoyo (triángulo amarillo).<br>
+                    - Momento 1 (Izquierda): \\( A \\cdot (20 + 15) \\text{ cm} = A \\cdot 35 \\text{ cm} \\)<br>
+                    - Momento 2 (Izquierda): \\( 4 \\text{ N} \\cdot 15 \\text{ cm} \\)<br>
+                    - Momento 3 (Derecha): \\( 50 \\text{ N} \\cdot 10 \\text{ cm} \\)<br>
+                    Planteamos la ecuación completa:<br>
+                    \\[ (A \\cdot 35) + (4 \\cdot 15) = 50 \\cdot 10 \\]<br>
+                    \\[ 35A + 60 = 500 \\implies 35 \\cdot  A = 440 \\]<br>
+                    \\[ A = \\frac{440}{35} \\approx 12,571 \\text{ N} \\]<br>
+                    <span class='resultado'>Resultado: \\( A \\approx 12,57 \\text{ N} \\)</span>
+                </div>`
+        },
+        {
+            titulo: "Problema 5: Equilibrio de esferas cargadas",
+            enunciado: "Dos pequeñas esferas de masa \\( m = 1 \\text{ g} \\), y de cargas eléctricas opuestas, cuelgan de hilos de igual longitud. Debido a la atracción electrostática de \\( 5,67 \\cdot 10^{-3} \\text{ N} \\), forman un ángulo \\( \\alpha \\) con la vertical. Calcula la tensión del hilo y el valor del ángulo \\( \\alpha \\). <br> <div style='text-align: center; margin-bottom: 20px;'> <img src='img/eq_5.png' style='max-width: 90%;height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);'> </div> <br> ",
+            solucion: `
+                <div class='paso'>
+                    <strong>Paso 1: Identificación de fuerzas y conversión al S.I.:</strong><br>
+                    Sobre cada esfera actúan tres fuerzas: el peso (vertical hacia abajo), la tensión del hilo (en la dirección del hilo) y la fuerza electrostática (horizontal hacia la otra esfera).<br>
+                    - Masa: \\( m = 1 \\text{ g} = 1 \\cdot 10^{-3} \\text{ kg} \\)<br>
+                    - Fuerza electrostática: \\( F_e = 5,67 \\cdot 10^{-3} \\text{ N} \\)<br>
+                    - Gravedad: \\( g = 9,8 \\text{ m/s}^2 \\)<br>
+                    - Peso: \\( P = m \\cdot g = 1 \\cdot 10^{-3} \\text{ kg} \\cdot 9,8 \\text{ m/s}^2 = 9,8 \\cdot 10^{-3} \\text{ N} \\)
+                </div>
+
+                <div class='paso'>
+                    <strong>Paso 2: Ecuaciones de equilibrio:</strong><br>
+                    Descomponemos la tensión (\\( T \\)) en sus componentes horizontal (\\( T_x \\)) y vertical (\\( T_y \\)):<br>
+                    - Eje horizontal (X): \\( T \\cdot \\text{sen}(\\alpha) = F_e \\)<br>
+                    - Eje vertical (Y): \\( T \\cdot \\cos(\\alpha) = P \\)<br>
+                    Dividiendo la primera ecuación entre la segunda, obtenemos la relación para el ángulo:<br>
+                    \\[ \\tan(\\alpha) = \\frac{F_e}{P} \\]
+                </div>
+
+                <div class='paso'>
+                    <strong>Paso 3: Cálculo del ángulo \\( \\alpha \\):</strong><br>
+                    Sustituimos los valores de la fuerza y el peso:<br>
+                    \\[ \\tan(\\alpha) = \\frac{5,67 \\cdot 10^{-3}}{9,8 \\cdot 10^{-3}} = 0,5785 \\]<br>
+                    Aplicando la función arcotangente (\\( \\tan^{-1} \\)):<br>
+                    \\[ \\alpha = \\text{arctan}(0,5785) \\approx 30^{\\circ} \\]<br>
+                    <span class='resultado'>Resultado del ángulo: \\( \\alpha \\approx 30^{\\circ} \\)</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>Paso 4: Cálculo de la tensión del hilo:</strong><br>
+                    Usamos la componente vertical para despejar \\( T \\):<br>
+                    \\[ T = \\frac{P}{\\cos(\\alpha)} = \\frac{9,8 \\cdot 10^{-3}}{\\cos(30^{\\circ})} \\]<br>
+                    \\[ T = \\frac{9,8 \\cdot 10^{-3}}{0,866} \\approx 11,31 \\cdot 10^{-3} \\text{ N} \\]<br>
+                    <span class='resultado'>Resultado de la tensión: \\( T \\approx 1,13 \\cdot 10^{-2} \\text{ N} \\)</span>
+                </div>`
         }
     ],
     "momento": [
