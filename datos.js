@@ -277,34 +277,17 @@ const baseDatosProblemas = {
             enunciado: "Un ciclista toma la curva de un velódromo de 20 m de radio con una velocidad de 40 km/h. Suponiendo que el rozamiento entre las cuerdas y el suelo es despreciable, calcula el ángulo de peralte mínimo para que el ciclista no se salga de la pista.",
             solucion: `
                 <div class='paso'>
-                    <strong>a) Análisis de fuerzas en un peralte sin rozamiento:</strong><br>
+                    <strong>Análisis de fuerzas en un peralte sin rozamiento:</strong><br>
                     La componente vertical de la Fuerza Normal (\\( N_y \\)) contrarresta el peso (\\( P \\)), mientras que la componente horizontal (\\( N_x \\)) actúa como fuerza centrípeta (\\( F_c \\)).<br>
                     - Eje vertical: \\( N \\cdot \\cos(\\alpha) = m \\cdot g \\)<br>
                     - Eje horizontal: \\( N \\cdot \\sin(\\alpha) = m \\cdot \\frac{v^2}{R} \\)
                 </div>
                 <div class='paso'>
-                    <strong>b) Cálculo del ángulo de peralte (\\( \\alpha \\)):</strong><br>
+                    <strong>Cálculo del ángulo de peralte (\\( \\alpha \\)):</strong><br>
                     \\[ \\tan(\\alpha) = \\frac{v^2}{R \\cdot g} = \\frac{11,11^2}{20 \\cdot 9,8} \\approx 0,63 \\implies \\alpha = 32,2^{\\circ} \\]
+                    <span class='resultado'>Resultado:  &nbsp El ángulo de peralte mínimo es de aproximadamente 32,2º.</span>
                 </div>
                 
-                <div class='paso simulador-interactivo' style='margin-top: 10px; text-align: center; background: #f9f9f9; padding: 15px; border-radius: 8px;'>
-                    <h4 style='margin-top: 0;'>Simulador Interactivo: Diagrama de Fuerzas</h4>
-                    <canvas id="lienzoPeralte" width="800" height="500" style="background: white; border: 1px solid #ccc; border-radius: 8px; width: 100%; max-width: 600px;"></canvas>
-                    
-                    <div style="margin-top: 15px; text-align: left; display: inline-block; width: 100%; max-width: 400px;">
-                        <label style="display: block; margin-bottom: 10px; font-weight: bold;">
-                            Velocidad (m/s): <span id="valV">11.1</span>
-                            <input type="range" id="vInput" min="5" max="30" step="0.1" value="11.1" style="width: 100%;">
-                        </label>
-                        <label style="display: block; margin-bottom: 10px; font-weight: bold;">
-                            Radio (m): <span id="valR">20</span>
-                            <input type="range" id="rInput" min="10" max="100" step="1" value="20" style="width: 100%;">
-                        </label>
-                        <div style="font-size: 1.2em; color: #d32f2f; font-weight: bold; text-align: center; margin-top: 15px;">
-                            Ángulo ideal: <span id="valAngulo">32.2</span>°
-                        </div>
-                    </div>
-                </div>
             `
         },
         {
@@ -639,14 +622,14 @@ const baseDatosProblemas = {
                     - Fuerza motriz proporcional: \\( \\text{sen}(20^{\\circ}) \\approx 0,342 \\)<br>
                     - Resistencia proporcional: \\( 0,4 \\cdot \\cos(20^{\\circ}) \\approx 0,4 \\cdot 0,940 = 0,376 \\)<br>
                     Como \\( 0,342 < 0,376 \\), la fuerza del peso no es suficiente para vencer el rozamiento estático.<br>
-                    <span class='resultado'>Resultado a: El bloque NO descenderá; se quedará quieto en la rampa.</span>
+                    <span class='resultado'>Resultado: El bloque NO descenderá; se quedará quieto en la rampa.</span>
                 </div>
 
                 <div class='paso'>
                     <strong>b) ¿Qué fuerza fundamental supone el rozamiento?</strong><br>
                     A nivel microscópico, el rozamiento no es una fuerza "independiente", sino que tiene su origen en las interacciones entre los átomos y moléculas de las dos superficies en contacto (las irregularidades de la piedra y la rampa).<br>
                     Estas interacciones son de naturaleza eléctrica (atracciones y repulsiones entre electrones y núcleos de los materiales).<br>
-                    <span class='resultado'>Resultado b: El rozamiento es una manifestación de la <strong>fuerza electromagnética</strong>.</span>
+                    <span class='resultado'>Resultado: El rozamiento es una manifestación de la <strong>fuerza electromagnética</strong>.</span>
                 </div>`
         },
         {
@@ -671,7 +654,7 @@ const baseDatosProblemas = {
                     \\[ a = -g \\cdot (\\text{sen}(25^{\\circ}) + \\mu \\cdot \\cos(25^{\\circ})) \\]<br>
                     \\[ a = -9,8 \\cdot (0,4226 + 0,1 \\cdot 0,9063) = -9,8 \\cdot (0,4226 + 0,0906) \\]<br>
                     \\[ a = -9,8 \\cdot 0,5132 = -5,029 \\text{ m/s}^2 \\]<br>
-                    <span class='resultado'>Resultado a: La aceleración es de \\( -5,03 \\text{ m/s}^2 \\) (el signo negativo indica que está frenando).</span>
+                    <span class='resultado'>Resultado: La aceleración es de \\( -5,03 \\text{ m/s}^2 \\) (el signo negativo indica que está frenando).</span>
                 </div>
 
                 <div class='paso'>
@@ -682,7 +665,7 @@ const baseDatosProblemas = {
                     \\[ v_f^2 = 20^2 + 2 \\cdot (-5,03) \\cdot 5 \\]<br>
                     \\[ v_f^2 = 400 - 50,3 = 349,7 \\]<br>
                     \\[ v_f = \\sqrt{349,7} \\approx 18,7 \\text{ m/s} \\]<br>
-                    <span class='resultado'>Resultado b: Sale del plano con una velocidad de \\( 18,7 \\text{ m/s} \\).</span>
+                    <span class='resultado'>Resultado: Sale del plano con una velocidad de \\( 18,7 \\text{ m/s} \\).</span>
                 </div>
 
                 <div class='paso'>
@@ -692,74 +675,266 @@ const baseDatosProblemas = {
                     \\[ ¿ \\text{sen}(25^{\\circ}) > \\mu \\cdot \\cos(25^{\\circ}) ? \\]<br>
                     \\[ 0,4226 > 0,1 \\cdot 0,9063 \\implies 0,4226 > 0,0906 \\]<br>
                     Como la componente del peso es mucho mayor que la fuerza de rozamiento estático máxima:<br>
-                    <span class='resultado'>Resultado c: SÍ, el gorro deslizará y caerá plano abajo.</span>
+                    <span class='resultado'>Resultado: SÍ, el gorro deslizará y caerá plano abajo.</span>
                 </div>`
         },        
         {
             titulo: "Problema 4: Máquina de Atwood",
-            enunciado: "Una grúa funciona como la denominada máquina de Atwood. Sobre la polea de una grúa cuelgan de los extremos de una cuerda inextensible y de masa despreciable dos pesas: una de masa 400 g y otra de masa 500 g. Determina: <br> a) Indica en qué sentido se mueven las masas. <br> b) ¿Cuál es la tensión de la cuerda? <br> c) ¿Con que aceleración se moverán? <br> d) Indica la fuerza fundamental implicada en la fuerza tensión y nombra sus bosones.",
-            // solucion: `
-            //     <div class='paso'>
-            //         Subiendo, gravedad y rozamiento frenan: \\( -mg\\sin 25^\\circ - \\mu mg\\cos 25^\\circ = ma \\)<br>
-            //         \\( a = -9,8(0,422 + 0,1 \\cdot 0,906) = -5,03 \\text{ m/s}^2 \\)<br>
-            //         \\( v_f^2 = 20^2 + 2(-5,03)(5) \\implies v_f = 18,7 \\text{ m/s} \\)
-            //     </div>
-            // `
+            enunciado: "En una grúa cuelgan de una cuerda inextensible dos masas: \\( m_1 = 400 \\text{ g} \\) y \\( m_2 = 500 \\text{ g} \\). Determina: <br> a) Sentido del movimiento. <br> b) Tensión de la cuerda. <br> c) Aceleración del sistema. <br> d) Fuerza fundamental implicada y sus bosones.",
+            solucion: `
+                <div class='paso'>
+                    <strong>Paso 1: Análisis de datos y conversión al S.I.:</strong><br>
+                    Primero, pasamos las masas a kilogramos:<br>
+                    - Masa 1: \\( m_1 = 400 \\text{ g} = 0,4 \\text{ kg} \\)<br>
+                    - Masa 2: \\( m_2 = 500 \\text{ g} = 0,5 \\text{ kg} \\)<br>
+                    - Gravedad: \\( g = 9,8 \\text{ m/s}^2 \\)<br>
+                    Pesos respectivos:<br>
+                    - \\( P_1 = 0,4 \\cdot 9,8 = 3,92 \\text{ N} \\)<br>
+                    - \\( P_2 = 0,5 \\cdot 9,8 = 4,90 \\text{ N} \\)
+                </div>
+
+                <div class='paso'>
+                    <strong>a) Indica en qué sentido se mueven las masas:</strong><br>
+                    En una máquina de Atwood, el sistema se mueve siempre hacia el lado de la masa mayor debido a la diferencia de pesos.<br>
+                    
+                    <br>
+                    <span class='resultado'>Resultado: La masa de 500 g (\\( m_2 \\)) descenderá, mientras que la masa de 400 g (\\( m_1 \\)) ascenderá.</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>c) ¿Con qué aceleración se moverán?</strong><br>
+                    <em>(Resolvemos c antes que b por facilidad algebraica)</em>. Aplicamos la segunda ley de Newton al sistema completo. La fuerza neta es la diferencia de pesos:<br>
+                    \\[ F_{neta} = m_{total} \\cdot a \\]<br>
+                    \\[ P_2 - P_1 = (m_1 + m_2) \\cdot a \\]<br>
+                    Sustituimos valores:<br>
+                    \\[ 4,90 - 3,92 = (0,4 + 0,5) \\cdot a \\]<br>
+                    \\[ 0,98 = 0,9 \\cdot a \\implies a = \\frac{0,98}{0,9} \\approx 1,089 \\text{ m/s}^2 \\]<br>
+                    <span class='resultado'>Resultado c: La aceleración es de \\( 1,09 \\text{ m/s}^2 \\).</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>b) ¿Cuál es la tensión de la cuerda?</strong><br>
+                    Analizamos una de las masas por separado (por ejemplo, la masa \\( m_1 \\) que sube):<br>
+                    \\[ T - P_1 = m_1 \\cdot a \\]<br>
+                    \\[ T = P_1 + (m_1 \\cdot a) \\]<br>
+                    \\[ T = 3,92 + (0,4 \\cdot 1,089) = 3,92 + 0,4356 \\]<br>
+                    <span class='resultado'>Resultado b: La tensión de la cuerda es de \\( 4,356 \\text{ N} \\).</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>d) Fuerza fundamental y bosones:</strong><br>
+                    La tensión es una fuerza de contacto que surge de las interacciones moleculares dentro de la cuerda. Al igual que el rozamiento o la normal, su origen es la interacción entre cargas eléctricas.<br>
+                    <span class='resultado'>Resultado: La fuerza fundamental es la <strong>electromagnética</strong> y sus bosones mediadores son los <strong>fotones</strong>.</span>
+                </div>`
         },
         {
-            titulo: "Problema 5: Gato y lámpara",
-            enunciado: "Un gato ha decidido jugar con el cable de la lámpara de la mesilla de noche. El cable pasa por la esquina pulida de la mesa, que actúa como una polea. La masa de la lámpara es de 2 kg y la del gato de 3 kg. Si el coeficiente de rozamiento cinético entre la mesa y la lámpara es de \\( \\ce{μ_c = 0,3} \\). Determina:  <br> <div style='text-align: center; margin-bottom: 20px;'> <img src='img/pi_5.png' style='max-width: 20%;height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);'> </div> <br> a) La aceleración con la que se mueven las masas. <br> b) La tensión de la cuerda. <br> c) La velocidad del gato pasado 1,5 segundos.",
-            // solucion: `
-            //     <div class='paso'>
-            //         Ecuaciones: \\( P_{gato} - T = m_{gato} \\cdot a \\) y \\( T - F_{r(lamp)} = m_{lamp} \\cdot a \\)<br>
-            //         \\( 3 \\cdot 9,8 - 0,3 \\cdot 2 \\cdot 9,8 = (3+2)a \\implies 29,4 - 5,88 = 5a \\implies a = 4,7 \\text{ m/s}^2 \\)<br>
-            //         \\( T = 15,28 \\text{ N} \\) ; Velocidad: \\( v = 4,7 \\cdot 1,5 = 7,06 \\text{ m/s} \\)
-            //     </div>
-            // `
+            titulo: "Problema 5: El gato y la lámpara",
+            enunciado: "Una lámpara de 2 kg está sobre una mesa (\\( \\mu_c = 0,3 \\)) conectada por un cable a un gato de 3 kg que cuelga por el borde. Determina: <br> a) La aceleración del sistema. <br> b) La tensión de la cuerda. <br> c) La velocidad del gato a los 1,5 segundos. <br> <div style='text-align: center; margin-bottom: 20px;'> <img src='img/pi_5.png' style='max-width: 20%;height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);'> </div>",
+            solucion: `
+                <div class='paso'>
+                    <strong>Paso 1: Identificación de fuerzas y datos:</strong><br>
+                    - Masa de la lámpara (sobre la mesa): \\( m_1 = 2 \\text{ kg} \\)<br>
+                    - Masa del gato (colgando): \\( m_2 = 3 \\text{ kg} \\)<br>
+                    - Coeficiente de rozamiento: \\( \\mu_c = 0,3 \\)<br>
+                    - Gravedad: \\( g = 9,8 \\text{ m/s}^2 \\)<br>
+                    <br>
+                    Calculamos el Peso de la lámpara (\\( P_1 \\)), su Normal (\\( N \\)) y la Fuerza de rozamiento (\\( F_r \\)):<br>
+                    \\[ P_1 = m_1 \\cdot g = 2 \\cdot 9,8 = 19,6 \\text{ N} \\]
+                    \\[ N = P_1 = 19,6 \\text{ N} \\]
+                    \\[ F_r = \\mu_c \\cdot N = 0,3 \\cdot 19,6 = 5,88 \\text{ N} \\]
+                    Calculamos el Peso del gato (\\( P_2 \\)):<br>
+                    \\[ P_2 = m_2 \\cdot g = 3 \\cdot 9,8 = 29,4 \\text{ N} \\]
+                </div>
+
+                
+
+                <div class='paso'>
+                    <strong>a) La aceleración con la que se mueven las masas:</strong><br>
+                    Aplicamos la segunda ley de Newton al sistema completo. La fuerza que "tira" es el peso del gato (\\( P_2 \\)) y la que "frena" es el rozamiento de la lámpara (\\( F_r \\)):<br>
+                    \\[ \\sum F = m_{total} \\cdot a \\]
+                    \\[ P_2 - F_r = (m_1 + m_2) \\cdot a \\]
+                    Sustituimos los valores:<br>
+                    \\[ 29,4 - 5,88 = (2 + 3) \\cdot a \\]
+                    \\[ 23,52 = 5 \\cdot a \\implies a = \\frac{23,52}{5} = 4,704 \\text{ m/s}^2 \\]
+                    <span class='resultado'>Resultado: La aceleración es de \\( 4,70 \\text{ m/s}^2 \\).</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>b) La tensión de la cuerda:</strong><br>
+                    Para hallar la tensión (\\( T \\)), analizamos una de las dos masas individualmente. Por ejemplo, la masa colgante (el gato):<br>
+                    \\[ P_2 - T = m_2 \\cdot a \\]
+                    \\[ T = P_2 - (m_2 \\cdot a) \\]
+                    \\[ T = 29,4 - (3 \\cdot 4,704) \\]
+                    \\[ T = 29,4 - 14,112 = 15,288 \\text{ N} \\]
+                    <span class='resultado'>Resultado: La tensión del cable es de \\( 15,29 \\text{ N} \\).</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>c) La velocidad del gato pasado 1,5 segundos:</strong><br>
+                    Suponiendo que el sistema parte del reposo (\\( v_0 = 0 \\)), aplicamos la fórmula del MRUA:<br>
+                    \\[ v = v_0 + a \\cdot t \\]
+                    \\[ v = 0 + (4,704 \\text{ m/s}^2 \\cdot 1,5 \\text{ s}) \\]
+                    \\[ v = 7,056 \\text{ m/s} \\]
+                    <span class='resultado'>Resultado: La velocidad tras 1,5 segundos es de \\( 7,06 \\text{ m/s} \\).</span>
+                </div>`
         },
         {
-            titulo: "Problema 6: Trabajo en la construcción",
+            titulo: "Problema 6: Elevación de carga en plano inclinado",
             enunciado: "En construcción se emplea la polea fija para levantar cargas. En la edificación de un bloque de pisos turísticos se emplea un sistema de polea en un plano inclinado como en la figura. Sabiendo que el coeficiente de rozamiento cinético es \\( μ = 0,3 \\), determina: <br> <br> <div style='text-align: center; margin-bottom: 20px;'> <img src='img/pi_6.png' style='max-width: 40%;height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);'> </div> <br> a) Razona por qué es útil una polea fija. <br> b) Indica en qué sentido se mueven las masas. <br> c) Calcula la aceleración del sistema. <br> d) Halla la tensión de la cuerda.",
-            // solucion: `
-            //     <div class='paso'>
-            //         Ecuación coche: \\( P_x - T - F_{r_c} = M \\cdot a \\)<br>
-            //         Ecuación gemelos: \\( T - F_{r_g} = m \\cdot a \\)<br>
-            //         Despejando el sistema conjunto se obtiene:<br>
-            //         <span class='resultado'>a = 0,42 m/s² ; T = 651,6 N ; t = 6,9 s</span>
-            //     </div>
-            // `
+            solucion: `
+                <div class='paso'>
+                    <strong>a) Utilidad de la polea fija:</strong><br>
+                    La polea fija permite redirigir la fuerza de tensión. En este caso, permite que el peso de la masa colgante ayude a contrarrestar parte del peso de la masa grande en el plano, facilitando el control del movimiento o reduciendo el esfuerzo necesario si se quisiera subir la carga.
+                </div>
+
+                <div class='paso'>
+                    <strong>b) Sentido del movimiento:</strong><br>
+                    Comparamos las fuerzas enfrentadas en el eje del movimiento:<br>
+                    - Componente del peso de \\( M \\) hacia abajo del plano: \\( P_{Mx} = M \\cdot g \\cdot \\text{sen}(30^{\\circ}) = 500 \\cdot 9,8 \\cdot 0,5 = 2450 \\text{ N} \\).<br>
+                    - Peso de la masa colgante \\( m \\): \\( P_m = m \\cdot g = 100 \\cdot 9,8 = 980 \\text{ N} \\).<br>
+                    Como \\( P_{Mx} (2450 \\text{ N}) > P_m (980 \\text{ N}) \\), el sistema se moverá hacia la izquierda:<br>
+                    <span class='resultado'>Resultado: La masa \\( M \\) desciende por el plano inclinado y la masa \\( m \\) asciende verticalmente.</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>c) Cálculo de la aceleración del sistema:</strong><br>
+                    Aplicamos la segunda ley de Newton. Al moverse el sistema hacia abajo del plano, el rozamiento (\\( F_r \\)) apunta hacia arriba de la rampa:<br>
+                    \\[ \\sum F = (M + m) \\cdot a \\]\n            \\[ P_{Mx} - P_m - F_r = (M + m) \\cdot a \\]\n            Calculamos el rozamiento de la masa \\( M \\):<br>
+                    \\[ F_r = \\mu \\cdot M \\cdot g \\cdot \\cos(30^{\\circ}) = 0,3 \\cdot 500 \\cdot 9,8 \\cdot 0,866 = 1273,02 \\text{ N} \\]\n            Sustituimos en la ecuación principal:<br>
+                    \\[ 2450 - 980 - 1273,02 = (500 + 100) \\cdot a \\]\n            
+                    \\[ 196,98 = 600 \\cdot a \\implies a = \\frac{196,98}{600} \\approx 0,328 \\text{ m/s}^2 \\]\n       
+                    <span class='resultado'>Resultado: La aceleración del sistema es de \\( 0,33 \\text{ m/s}^2 \\).</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>d) Halla la tensión de la cuerda:</strong><br>
+                    Analizamos la masa que cuelga (\\( m = 100 \\text{ kg} \\)). Como esta masa está subiendo:<br>
+                    \\[ T - P_m = m \\cdot a \\]\n
+                    \\[ T = P_m + (m \\cdot a) \\]\n      
+                    \\[ T = 980 + (100 \\cdot 0,328) = 980 + 32,8 = 1012,8 \\text{ N} \\]\n            
+                    <span class='resultado'>Resultado: La tensión de la cuerda es de \\( 1012,8 \\text{ N} \\).</span>
+                </div>
+        `
         },
         {
             titulo: "Problema 7: Muñeco lanzado",
             enunciado: "Una niña tira un muñeco de 1 kg hacia arriba a lo largo de una carretera inclinada 37º con una velocidad inicial de 9,8 m/s. Se observa que recorre una distancia de 6 m y después desliza hacia abajo hasta el punto de partida. Calcula: <br> a) El coeficiente de rozamiento. <br> b) La fuerza de rozamiento que actúa sobre el muñeco. <br> c) La velocidad con la que vuelve a su posición inicial el muñeco.",
-            // solucion: `
-            //     <div class='paso'>
-            //         Aceleración de bajada usando MRUA: \\( v^2 = v_0^2 + 2ax \\implies 20^2 = 0 + 2 \\cdot a \\cdot 150 \\implies a = 1,33 \\text{ m/s}^2 \\)<br>
-            //         Dinámica: \\( g(\\sin 25^\\circ - \\mu \\cos 25^\\circ) = 1,33 \\implies \\mu = 0,316 \\)
-            //     </div>
-            // `
+            solucion: `
+                <div class='paso'>
+                    <strong>Paso 1: Análisis del ascenso para hallar la aceleración:</strong><br>
+                    Sabemos que el muñeco recorre 6 m hasta detenerse (\\( v_f = 0 \\)). Usamos cinemática para hallar la aceleración de frenado (\\( a_a \\)):<br>
+                    \\[ v_f^2 = v_0^2 + 2 \\cdot a_a \\cdot \\Delta x \\]
+                    \\[ 0 = (9,8)^2 + 2 \\cdot a_a \\cdot 6 \\implies 0 = 96,04 + 12 \\cdot a_a \\]
+                    \\[ a_a = -\\frac{96,04}{12} = -8,003 \\text{ m/s}^2 \\]
+                </div>
+
+                <div class='paso'>
+                    <strong>a) El coeficiente de rozamiento (\\( \\mu \\)):</strong><br>
+                    Durante el ascenso, tanto el peso tangencial como el rozamiento frenan al muñeco:<br>
+                    \\[ \\sum F_x = m \\cdot a_a \\implies -m \\cdot g \\cdot \\text{sen}(37^{\\circ}) - \\mu \\cdot m \\cdot g \\cdot \\cos(37^{\\circ}) = m \\cdot a_a \\]<br>
+                    Simplificamos la masa y despejamos \\( \\mu \\):<br>
+                    \\[ -9,8 \\cdot 0,6018 - \\mu \\cdot 9,8 \\cdot 0,7986 = -8,003 \\]
+                    \\[ -5,898 - 7,826 \\cdot \\mu = -8,003 \\]
+                    \\[ 7,826 \\cdot \\mu = 2,105 \\implies \\mu = \\frac{2,105}{7,826} \\approx 0,269 \\]
+                    <span class='resultado'>Resultado: El coeficiente de rozamiento es \\( \\mu \\approx 0,27 \\).</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>b) La fuerza de rozamiento (\\( F_r \\)):</strong><br>
+                    La fuerza de rozamiento depende de la normal (\\( N = m \\cdot g \\cdot \\cos(37^{\\circ}) \\)):<br>
+                    \\[ F_r = \\mu \\cdot m \\cdot g \\cdot \\cos(37^{\\circ}) \\]
+                    \\[ F_r = 0,269 \\cdot 1 \\text{ kg} \\cdot 9,8 \\text{ m/s}^2 \\cdot 0,7986 \\]
+                    <span class='resultado'>Resultado: \\( F_r \\approx 2,10 \\text{ N} \\).</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>c) Velocidad con la que vuelve a la posición inicial:</strong><br>
+                    Ahora el muñeco baja. El peso tangencial tira de él, pero el rozamiento ahora apunta hacia arriba (oponiéndose a la bajada). Calculamos la nueva aceleración (\\( a_d \\)):<br>
+                    \\[ m \\cdot a_d = m \\cdot g \\cdot \\text{sen}(37^{\\circ}) - F_r \\]
+                    \\[ 1 \\cdot a_d = (1 \\cdot 9,8 \\cdot 0,6018) - 2,10 \\]
+                    \\[ a_d = 5,898 - 2,10 = 3,798 \\text{ m/s}^2 \\]
+                    Ahora calculamos la velocidad final tras recorrer los 6 m de bajada partiendo del reposo:<br>
+                    \\[ v_f^2 = 0 + 2 \\cdot 3,798 \\cdot 6 = 45,576 \\]
+                    \\[ v_f = \\sqrt{45,576} \\approx 6,75 \\text{ m/s} \\]
+                    <span class='resultado'>Resultado: Vuelve con una velocidad de \\( 6,75 \\text{ m/s} \\).</span>
+                </div>
+        `
         },
         {
             titulo: "Problema 8: Chiquillo trineo",
             enunciado: "Un chiquillo se deja caer colina abajo con su trineo por la ladera de una montaña nevada que presenta una inclinación de 25º. Cuando desciende la montaña (el plano inclinado), ha recorrido 150 metros. Entonces atraviesa una capa de hielo horizontal antes de comenzar a subir una montaña nevada de 10º de inclinación. Sabiendo que existe coeficiente de rozamiento con la nieve (presente en ambos planos inclinados) y que este coeficiente es nulo con el hielo (plano horizontal), determina: <br> <br> <div style='text-align: center; margin-bottom: 20px;'> <img src='img/pi_8.png' style='max-width: 40%;height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);'> </div> <br> a) El coeficiente de rozamiento con la nieve, sabiendo que llega a la capa de hielo con una velocidad de 20 m/s. <br> b) La velocidad con la que comienza a subir la segunda montaña de 10º de inclinación. <br> c) La distancia que recorre en la segunda montaña hasta frenarse.",
-            // solucion: `
-            //     <div class='paso'>
-            //         a) \\( 100g\\sin 45^\\circ - 100g\\sin 30^\\circ = 200a \\implies a = 0,96 \\text{ m/s}^2 \\)<br>
-            //         b) Con \\(\\mu=0,05\\) restando fuerzas de rozamiento en ambos lados:<br>
-            //         <span class='resultado'>a = 0,56 m/s² ; T = 391,8 N</span>
-            //     </div>
-            // `
+            solucion: `
+                <div class='paso'>
+                    <strong>a) Cálculo del coeficiente de rozamiento (\\( \\mu \\)):</strong><br>
+                    Primero, necesitamos la aceleración de descenso (\\( a_1 \\)). Usamos los datos cinemáticos del primer tramo: parte del reposo (\\( v_0 = 0 \\)), alcanza \\( v_f = 20 \\text{ m/s} \\) y recorre \\( \\Delta x = 150 \\text{ m} \\).<br>
+                    \\[ v_f^2 = v_0^2 + 2 \\cdot a_1 \\cdot \\Delta x \\implies 20^2 = 0 + 2 \\cdot a_1 \\cdot 150 \\]
+                    \\[ 400 = 300 \\cdot a_1 \\implies a_1 = \\frac{400}{300} = 1,333 \\text{ m/s}^2 \\]
+                    Aplicamos la segunda ley de Newton para el descenso (donde el peso tira y el rozamiento frena):<br>
+                    \\[ m \\cdot g \\cdot \\text{sen}(25^{\\circ}) - \\mu \\cdot m \\cdot g \\cdot \\cos(25^{\\circ}) = m \\cdot a_1 \\]
+                    Simplificamos la masa (\\( m \\)) y despejamos \\( \\mu \\):<br>
+                    \\[ 9,8 \\cdot \\text{sen}(25^{\\circ}) - \\mu \\cdot 9,8 \\cdot \\cos(25^{\\circ}) = 1,333 \\]
+                    \\[ 4,141 - 8,882 \\cdot \\mu = 1,333 \\implies 8,882 \\cdot\\mu = 2,808 \\implies  \\mu = \\frac {2,808}{8,882} \\approx 0,316 \\]
+                    <span class='resultado'>Resultado: El coeficiente de rozamiento es \\( \\mu \\approx 0,316 \\).</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>b) Velocidad al comenzar el ascenso:</strong><br>
+                    En el tramo horizontal de hielo, el enunciado indica que el rozamiento es nulo (\\( \\mu = 0 \\)). Al no haber fuerzas horizontales actuando sobre el trineo:<br>
+                    \\[ \\sum F_x = 0 \\implies a = 0 \\implies v = \\text{constante} \\]
+                    <span class='resultado'>Resultado: El trineo mantiene su velocidad, por lo que entra en la segunda montaña a \\( 20 \\text{ m/s} \\).</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>c) Distancia recorrida en la segunda montaña (10°):</strong><br>
+                    En el ascenso, tanto la componente del peso como el rozamiento actúan en contra del movimiento. Calculamos la nueva aceleración de frenado (\\( a_2 \\)):<br>
+                    \\[ a_2 = -g \\cdot (\\text{sen}(10^{\\circ}) + \\mu \\cdot \\cos(10^{\\circ})) \\]
+                    \\[ a_2 = -9,8 \\cdot (0,1736 + 0,316 \\cdot 0,9848) = -9,8 \\cdot (0,1736 + 0,3112) \\]
+                    \\[ a_2 = -9,8 \\cdot 0,4848 = -4,751 \\text{ m/s}^2 \\]
+                    Finalmente, calculamos la distancia \\( \\Delta x_2 \\) hasta que se detiene (\\( v_f = 0 \\)):<br>
+                    \\[ v_f^2 = v_0^2 + 2 \\cdot a_2 \\cdot \\Delta x_2 \\implies 0 = 20^2 + 2 \\cdot (-4,751) \\cdot \\Delta x_2 \\]
+                    \\[ 400 = 9,502 \\cdot \\Delta x_2 \\implies \\Delta x_2 = \\frac{400}{9,502} \\approx 42,09 \\text{ m} \\]
+                    <span class='resultado'>Resultado: El trineo recorre \\( 42,09 \\text{ metros} \\) por la segunda ladera antes de pararse.</span>
+                </div>
+            `
         },
         {
             titulo: "Problema 9: Polea 30° y 45°",
             enunciado: "Dado el siguiente sistema de cargas conectadas por una polea de cuerda inextensible, determina la aceleración del sistema y la tensión de la cuerda cuando: <br> <br> <div style='text-align: center; margin-bottom: 20px;'> <img src='img/pi_9.png' style='max-width: 40%;height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);'> </div> <br>  a) No hay rozamiento. <br> b) El rozamiento cinético es \\( μ_c = 0,05 \\).",
-            // solucion: `
-            //     <div class='paso'>
-            //         a) \\( 100g\\sin 45^\\circ - 100g\\sin 30^\\circ = 200a \\implies a = 0,96 \\text{ m/s}^2 \\)<br>
-            //         b) Con \\(\\mu=0,05\\) restando fuerzas de rozamiento en ambos lados:<br>
-            //         <span class='resultado'>a = 0,56 m/s² ; T = 391,8 N</span>
-            //     </div>
-            // `
+            solucion: `
+                <div class='paso'>
+                    <strong>Paso 1: Análisis de las fuerzas tangenciales (pesos en X):</strong><br>
+                    Calculamos la componente del peso que tira hacia cada lado:<br>
+                    - Lado izquierdo (\\( m_1 \\)): \\( P_{1x} = m_1 \\cdot g \\cdot \\text{sen}(30^{\\circ}) = 100 \\cdot 9,8 \\cdot 0,5 = 490 \\text{ N} \\).<br>
+                    - Lado derecho (\\( m_2 \\)): \\( P_{2x} = m_2 \\cdot g \\cdot \\text{sen}(45^{\\circ}) = 50 \\cdot 9,8 \\cdot 0,707 = 346,43 \\text{ N} \\).<br>
+                    Como \\( P_{1x} > P_{2x} \\), el sistema tiende a moverse hacia la <strong>izquierda</strong>.
+                </div>
+
+                <div class='paso'>
+                    <strong>a) Caso sin rozamiento (\\( \\mu = 0 \\)):</strong><br>
+                    Aplicamos la segunda ley de Newton al sistema (Fuerza a favor - Fuerza en contra):<br>
+                    \\[ P_{1x} - P_{2x} = (m_1 + m_2) \\cdot a \\]\n            
+                    \\[ 490 - 346,43 = (100 + 50) \\cdot a \\]\n            
+                    \\[ 143,57 = 150 \\cdot a \\implies a = \\frac{143,57}{150} \\approx 0,957 \\text{ m/s}^2 \\]\n            
+                    Para la tensión, analizamos \\( m_2 \\) (que está subiendo por su plano):<br>
+                    \\[ T - P_{2x} = m_2 \\cdot a \\implies T = 346,43 + (50 \\cdot 0,957) \\]\n            
+                    <span class='resultado'>Resultado a: \\( a = 0,96 \\text{ m/s}^2 \\) y \\( T = 394,28 \\text{ N} \\).</span>
+                </div>
+
+                <div class='paso'>
+                    <strong>b) Caso con rozamiento (\\( \\mu_c = 0,05 \\)):</strong><br>
+                    El rozamiento en ambos planos se opone al movimiento (apunta hacia la derecha):<br>
+                    - \\( F_{r1} = \\mu_c \\cdot m_1 \\cdot g \\cdot \\cos(30^{\\circ}) = 0,05 \\cdot 100 \\cdot 9,8 \\cdot 0,866 = 42,43 \\text{ N} \\).<br>
+                    - \\( F_{r2} = \\mu_c \\cdot m_2 \\cdot g \\cdot \\cos(45^{\\circ}) = 0,05 \\cdot 50 \\cdot 9,8 \\cdot 0,707 = 17,32 \\text{ N} \\).<br>
+                    Nueva ecuación de movimiento:<br>
+                    \\[ P_{1x} - P_{2x} - F_{r1} - F_{r2} = (m_1 + m_2) \\cdot a \\]\n            
+                    \\[ 490 - 346,43 - 42,43 - 17,32 = 150 \\cdot a \\]\n            
+                    \\[ 83,82 = 150 \\cdot a \\implies a = \\frac{83,82}{150} \\approx 0,559 \\text{ m/s}^2 \\]\n            
+                    Calculamos la nueva tensión analizando de nuevo \\( m_2 \\):<br>
+                    \\[ T - P_{2x} - F_{r2} = m_2 \\cdot a \\]\n            
+                    \\[ T = 346,43 + 17,32 + (50 \\cdot 0,559) \\]\n            
+                    <span class='resultado'>Resultado b: \\( a = 0,56 \\text{ m/s}^2 \\) y \\( T = 391,70 \\text{ N} \\).</span>
+                </div>
+        `
         }    
     ],
     "equilibrio": [

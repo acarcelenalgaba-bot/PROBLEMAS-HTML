@@ -244,11 +244,7 @@
                 // Asegurarnos de que todos los pasos empiezan ocultos
                 document.querySelectorAll('#caja-solucion .paso').forEach(p => p.classList.remove('visible'));
 
-                MathJax.typesetPromise(); 
-                
-                if (typeof iniciarSimuladorPeralte === 'function') {
-                    iniciarSimuladorPeralte();
-                }
+                MathJax.typesetPromise();
                 
             } else {
                 caja.style.display = 'none';
