@@ -798,6 +798,7 @@ const baseDatosProblemas = {
 
                 <div class='paso'>
                     <strong>c) Cálculo de la aceleración del sistema:</strong><br>
+                    <br> <br> <div style='text-align: center; margin-bottom: 20px;'> <img src='img/pi_6a.png' style='max-width: 40%;height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);'> </div> <br>
                     Aplicamos la segunda ley de Newton. Al moverse el sistema hacia abajo del plano, el rozamiento (\\( F_r \\)) apunta hacia arriba de la rampa:<br>
                     \\[ \\sum F = (M + m) \\cdot a \\]\n            \\[ P_{Mx} - P_m - F_r = (M + m) \\cdot a \\]\n            Calculamos el rozamiento de la masa \\( M \\):<br>
                     \\[ F_r = \\mu \\cdot M \\cdot g \\cdot \\cos(30^{\\circ}) = 0,3 \\cdot 500 \\cdot 9,8 \\cdot 0,866 = 1273,02 \\text{ N} \\]\n            Sustituimos en la ecuación principal:<br>
