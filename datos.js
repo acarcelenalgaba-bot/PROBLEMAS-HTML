@@ -125,13 +125,13 @@ const baseDatosProblemas = {
                     <iframe src="simulador_jupiter.html" width="100%" height="620" style="border:1px solid #ddd; border-radius:8px; background:#fff;"></iframe>
                     Queremos colocar el asteroide en un punto entre Júpiter y Ganímedes donde las fuerzas de atracción se anulen. Es decir, Júpiter tira hacia la izquierda con la misma fuerza que Ganímedes tira hacia la derecha. <br> Llamamos x a la distancia desde el asteroide hasta Ganímedes. La distancia desde el asteroide hasta Júpiter será d−x. <br> 
                     Igualamos los módulos de ambas fuerzas gravitatorias:
-                    \\[ G \\cdot \\frac{M_J \\cdot m}{(d - x)^2} =  G \\cdot \\frac{M_G \\cdot m}{x^2} \\] <br>
+                    \\[ G \\cdot \\frac{M_J \\cdot m}{(d - x)^2} =  G \\cdot \\frac{M_G \\cdot m}{x^2} \\]
                     Simplificamos G y m en ambos lados:
-                    \\[ \\frac{M_J}{(d - x)^2} =  \\frac{M_G}{x^2} \\] <br>
+                    \\[ \\frac{M_J}{(d - x)^2} =  \\frac{M_G}{x^2} \\]
                     Truco de examen: Para evitar resolver una ecuación de segundo grado farragosa, aplicamos la raíz cuadrada a ambos lados de la igualdad: <br>
-                    \\[ \\frac{\\sqrt{M_J}}{d - x} =  \\frac{\\sqrt{M_G}}{x} \\rightarrow x = \\frac{d \\cdot \\sqrt{M_G}}{\\sqrt{M_J} + \\sqrt{M_G}}  \\] <br> 
+                    \\[ \\frac{\\sqrt{M_J}}{d - x} =  \\frac{\\sqrt{M_G}}{x} \\rightarrow x = \\frac{d \\cdot \\sqrt{M_G}}{\\sqrt{M_J} + \\sqrt{M_G}}  \\]
                     Sustituyendo datos: <br>
-                    \\[ x = \\frac{1,26 \\cdot 10^6 \\cdot \\sqrt{1,482 \\cdot 10^{23}}}{\\sqrt{1,889 \\cdot 10^{27}} + \\sqrt{1,482 \\cdot 10^{23}}}  \\] <br> 
+                    \\[ x = \\frac{1,26 \\cdot 10^6 \\cdot \\sqrt{1,482 \\cdot 10^{23}}}{\\sqrt{1,889 \\cdot 10^{27}} + \\sqrt{1,482 \\cdot 10^{23}}}  \\]
                     <span class='resultado'>Resultado: &nbsp; x = 10536 m</span>
                 </div>
             `
@@ -143,11 +143,11 @@ const baseDatosProblemas = {
                 <div class='paso'>
                     <strong>a) Masa del Sol:</strong><br>
                     Sabemos que la fuerza con la que se atraen se calcula usando la Ley de Gravitación Universal:<br>
-                    \\[ F = G \\frac{M_S \\cdot M_T}{ r^2} \\]<br>
+                    \\[ F = G \\frac{M_S \\cdot M_T}{ r^2} \\]
                     Como nos dan la fuerza, solo tenemos que despejar la Masa del Sol (\\( M_S \\)​):<br>
-                    \\[ M_S = \\frac{F \\cdot r^2}{G \\cdot M_T} \\]<br>
+                    \\[ M_S = \\frac{F \\cdot r^2}{G \\cdot M_T} \\]
                     Sustituimos nuestros datos (cuidado con los cuadrados en la calculadora):<br>
-                    \\[ M_S = \\frac{3,539 \\cdot 10^{22} \\cdot (1,496 \\cdot 10^{11})^2}{6,67 \\cdot 10^{-11} \\cdot 5,97 \\cdot 10^{24}} \\]<br>
+                    \\[ M_S = \\frac{3,539 \\cdot 10^{22} \\cdot (1,496 \\cdot 10^{11})^2}{6,67 \\cdot 10^{-11} \\cdot 5,97 \\cdot 10^{24}} \\]
                     <span class='resultado'>Resultado:  &nbsp \\( M_s = 1,989 \\cdot 10^{30} kg\\)</span>
                 </div>
                 <div class='paso'>
@@ -160,24 +160,24 @@ const baseDatosProblemas = {
                 <div class='paso'>
                     <strong>c) Velocidad orbital:</strong><br>
                     Para que la Tierra se mantenga en órbita, la fuerza de atracción gravitatoria actúa como la fuerza centrípeta (\\(F_c​ = m \\cdot \\dfrac {v^2}{r} \\)​). Podemos usar directamente el valor de la fuerza que ya nos da el enunciado para simplificar: &nbsp \\( F_{gravitatoria}​ = F_{centrípeta} \\)​<br>
-                    \\[ F = M_T \\cdot \\frac{v^2}{r} \\]<br>
+                    \\[ F = M_T \\cdot \\frac{v^2}{r} \\]
                     Despejamos la velocidad (v):
-                    \\[ v^2 = \\frac {F \\cdot r}{M_T} \\rightarrow v = \\sqrt{\\frac {F \\cdot r}{M_T} } \\]<br>
+                    \\[ v^2 = \\frac {F \\cdot r}{M_T} \\rightarrow v = \\sqrt{\\frac {F \\cdot r}{M_T} } \\]
                     Sustituimos:<br>
-                    \\[ v = \\sqrt{\\frac {3,539 \\cdot 10^{22} \\cdot 1,496 \\cdot 10^{11}}{5,97 \\cdot 10^{24}} } \\]<br>
+                    \\[ v = \\sqrt{\\frac {3,539 \\cdot 10^{22} \\cdot 1,496 \\cdot 10^{11}}{5,97 \\cdot 10^{24}} } \\]
                     <span class='resultado'>Resultado:  &nbsp \\(\\ce{\\textrm{v} = 2,97 \\cdot 10^{4} m/s}\\)</span>
                 </div>
                 <div class='paso'>
                     <strong>d) Punto fuerza nula:</strong><br>
                     Llamaremos x a la distancia desde el satélite hasta la Tierra. Por tanto, la distancia al Sol será d−x.<br>
                     Igualamos fuerzas gravitatorias: <br>
-                    \\[ G \\frac{M_T \\cdot m}{x^2} =  G \\frac{M_S \\cdot m}{(d - x)^2} \\] <br>
+                    \\[ G \\frac{M_T \\cdot m}{x^2} =  G \\frac{M_S \\cdot m}{(d - x)^2} \\]
                     Simplificamos G y m, y aplicamos el "truco" de la raíz cuadrada en ambos lados:<br>
-                    \\[ \\frac{M_T}{x^2} =  \\frac{M_S}{(d - x)^2} \\quad \\rightarrow \\quad \\frac{\\sqrt{M_T}}{x} =  \\frac{\\sqrt{M_S}}{d - x} \\] <br> 
+                    \\[ \\frac{M_T}{x^2} =  \\frac{M_S}{(d - x)^2} \\quad \\rightarrow \\quad \\frac{\\sqrt{M_T}}{x} =  \\frac{\\sqrt{M_S}}{d - x} \\]
                     Despejamos x:<br>
                      \\[ x = \\frac{d \\cdot \\sqrt{M_T}}{\\sqrt{M_S} + \\sqrt{M_T}}  \\]
                     Sustituyendo datos: <br>
-                    \\[ x = \\frac{1,496 \\cdot 10^{11} \\cdot \\sqrt{5,97 \\cdot 10^{24}}}{\\sqrt{1,889 \\cdot 10^{30}} + \\sqrt{5,97 \\cdot 10^{24}}}  \\] <br> 
+                    \\[ x = \\frac{1,496 \\cdot 10^{11} \\cdot \\sqrt{5,97 \\cdot 10^{24}}}{\\sqrt{1,889 \\cdot 10^{30}} + \\sqrt{5,97 \\cdot 10^{24}}}  \\]
                     <span class='resultado'>Resultado:  &nbsp \\(\\ce{x = 2,58 \\cdot 10^{8} m}\\)</span>
                 </div>
             `
