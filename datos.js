@@ -46,31 +46,31 @@ const baseDatosProblemas = {
                 <div class='paso'>
                     <strong>a) Fuerza gravitatoria entre la Tierra y la Luna:</strong><br>
                     Aplicamos la Ley de Gravitación Universal de Newton. Recuerda que esta fuerza es mutua: la Tierra tira de la Luna con exactamente la misma fuerza con la que la Luna tira de la Tierra (3ª Ley de Newton).<br>
-                    \\[ F = G \\cdot \\frac{M_T \\cdot M_L}{d^2} \\]<br>
+                    \\[ F = G \\cdot \\frac{M_T \\cdot M_L}{d^2} \\]
                     Sustituimos nuestros inmensos números (¡cuidado al usar la notación científica en la calculadora!):<br>
-                    \\[ F = 6,67 \\cdot 10^{-11} \\cdot \\frac{5,97 \\cdot 10^{24} \\cdot 7,35 \\cdot 10^{22}}{(3,84 \\cdot 10^8)^2} = 6,67 \\cdot 10^{-11} \\cdot \\frac{4,38 \\cdot 10^{47}}{1,47 \\cdot 10^{17}} \\]<br>
+                    \\[ F = 6,67 \\cdot 10^{-11} \\cdot \\frac{5,97 \\cdot 10^{24} \\cdot 7,35 \\cdot 10^{22}}{(3,84 \\cdot 10^8)^2} = 6,67 \\cdot 10^{-11} \\cdot \\frac{4,38 \\cdot 10^{47}}{1,47 \\cdot 10^{17}} \\]
                     <span class='resultado'>Resultado:  &nbsp \\( F \\approx 1,98 \\cdot 10^{20} \\text{ N} \\)</span>
                 </div>
                 <div class='paso'>
                     <strong>b) Velocidad orbital de la Luna:</strong><br>
-                    ¿Por qué la Luna no se cae contra la Tierra si hay tanta fuerza atrayéndola? Porque está girando. Para mantener una órbita circular se necesita una fuerza centrípeta que actúe de "cuerda invisible", y en el espacio, la gravedad hace ese trabajo. Por tanto, igualamos la fuerza gravitatoria a la fuerza centrípeta (\\(F_g = F_c\\)):<br>
-                    \\[ G \\cdot \\frac{M_T \\cdot M_L}{d^2} = M_L \\cdot \\frac{v^2}{d} \\]<br>
-                    Fíjate que la masa de la Luna (\\(M_L\\)) y una de las distancias (\\(d\\)) se cancelan a ambos lados. Despejamos la velocidad:<br>
-                    \\[ v = \\sqrt{G \\cdot \\frac{M_T}{d}} = \\sqrt{ 6,67 \\cdot 10^{-11} \\cdot \\frac{5,97 \\cdot 10^{24}}{3,84 \\cdot 10^8} } = \\sqrt{1036960} \\]<br>
+                    ¿Por qué la Luna no se cae contra la Tierra si hay tanta fuerza atrayéndola? Porque está girando. Para mantener una órbita circular se necesita una fuerza centrípeta que actúe de "cuerda invisible", y en el espacio, la gravedad hace ese trabajo. Por tanto, igualamos la fuerza gravitatoria a la fuerza centrípeta (\\(F_g = F_c\\)):
+                    \\[ G \\cdot \\frac{M_T \\cdot M_L}{d^2} = M_L \\cdot \\frac{v^2}{d} \\]
+                    Fíjate que la masa de la Luna (\\(M_L\\)) y una de las distancias (\\(d\\)) se cancelan a ambos lados. Despejamos la velocidad:
+                    \\[ v = \\sqrt{G \\cdot \\frac{M_T}{d}} = \\sqrt{ 6,67 \\cdot 10^{-11} \\cdot \\frac{5,97 \\cdot 10^{24}}{3,84 \\cdot 10^8} } = \\sqrt{1036960} \\]
                     <span class='resultado'>Resultado:  &nbsp \\( v \\approx 1018,3 \\text{ m/s} \\) (¡Más de 1 km por segundo!)</span>
                 </div>
                 <div class='paso'>
                     <strong>c) Punto de fuerza neta nula (El "tirón" equilibrado):</strong><br>
-                    Buscamos un punto intermedio donde, si colocamos una nave espacial de masa \\(m\\), el tirón de la Tierra hacia un lado sea exactamente igual al tirón de la Luna hacia el otro. Si ese punto está a una distancia \\(x\\) de la Tierra, estará a una distancia \\(d - x\\) de la Luna.<br>
-                    \\[ F_{Tierra} = F_{Luna} \\implies G \\cdot \\frac{M_T \\cdot m}{x^2} = G \\cdot \\frac{M_L \\cdot m}{(d-x)^2} \\]<br>
-                    Las \\(G\\) y la masa de la nave (\\(m\\)) se cancelan. Nos queda:<br>
-                    \\[ \\frac{M_T}{x^2} = \\frac{M_L}{(d-x)^2} \\]<br>
-                    <em>*Truco:</em> ¡No desarrolles el cuadrado del denominador o te quedará una ecuación de segundo grado horrible! Como todo está al cuadrado, hacemos la raíz cuadrada en ambos lados de la igualdad:<br>
-                    \\[ \\frac{\\sqrt{M_T}}{x} = \\frac{\\sqrt{M_L}}{d-x} \\]<br>
-                    Sustituimos las masas y despejamos \\(x\\):<br>
-                    \\[ \\frac{2,44 \\cdot 10^{12}}{x} = \\frac{2,71 \\cdot 10^{11}}{3,84 \\cdot 10^8 - x} \\implies 9,38 \\cdot 10^{20} - 2,44 \\cdot 10^{12} \\cdot  x = 2,71 \\cdot 10^{11} \\cdot  x \\]<br>
-                    \\[ 9,38 \\cdot 10^{20} = 2,44 \\cdot 10^{12} \\cdot  x + 2,71 \\cdot 10^{11} \\cdot x \\implies  9,38 \\cdot 10^{20} = 2,711 \\cdot 10^{12} \\cdot  x \\]<br>
-                    \\[ x = \\frac{9,38 \\cdot 10^{20}}{2,711 \\cdot 10^{12}} \\]<br>
+                    Buscamos un punto intermedio donde, si colocamos una nave espacial de masa \\(m\\), el tirón de la Tierra hacia un lado sea exactamente igual al tirón de la Luna hacia el otro. Si ese punto está a una distancia \\(x\\) de la Tierra, estará a una distancia \\(d - x\\) de la Luna.
+                    \\[ F_{Tierra} = F_{Luna} \\implies G \\cdot \\frac{M_T \\cdot m}{x^2} = G \\cdot \\frac{M_L \\cdot m}{(d-x)^2} \\]
+                    Las \\(G\\) y la masa de la nave (\\(m\\)) se cancelan. Nos queda:
+                    \\[ \\frac{M_T}{x^2} = \\frac{M_L}{(d-x)^2} \\]
+                    <em>Truco:</em> ¡No desarrolles el cuadrado del denominador o te quedará una ecuación de segundo grado horrible! Como todo está al cuadrado, hacemos la raíz cuadrada en ambos lados de la igualdad:
+                    \\[ \\frac{\\sqrt{M_T}}{x} = \\frac{\\sqrt{M_L}}{d-x} \\]
+                    Sustituimos las masas y despejamos \\(x\\):
+                    \\[ \\frac{2,44 \\cdot 10^{12}}{x} = \\frac{2,71 \\cdot 10^{11}}{3,84 \\cdot 10^8 - x} \\implies 9,38 \\cdot 10^{20} - 2,44 \\cdot 10^{12} \\cdot  x = 2,71 \\cdot 10^{11} \\cdot  x \\]
+                    \\[ 9,38 \\cdot 10^{20} = 2,44 \\cdot 10^{12} \\cdot  x + 2,71 \\cdot 10^{11} \\cdot x \\implies  9,38 \\cdot 10^{20} = 2,711 \\cdot 10^{12} \\cdot  x \\]
+                    \\[ x = \\frac{9,38 \\cdot 10^{20}}{2,711 \\cdot 10^{12}} \\]
                     <span class='resultado'>Resultado:  &nbsp \\( x \\approx 3,46 \\cdot 10^{8} \\text{ m} \\) (medido desde el centro de la Tierra)</span>
                 </div>
             `
