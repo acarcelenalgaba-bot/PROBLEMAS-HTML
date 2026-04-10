@@ -42,23 +42,18 @@
 
         .contenedor-menus {
             display: flex;
-            flex-wrap: nowrap;
-            gap: 5px;
+            flex-wrap: nowrap;       /* No permite saltos de línea */
+            gap: 8px; 
             align-items: center;
             width: 100%;           
-            max-width: 100%;       
-            overflow-x: auto;      
-            padding-bottom: 5px;
+            overflow-x: auto;        /* Habilita scroll si no caben */
+            padding-bottom: 12px;    /* Espacio para la barra de scroll */
             justify-content: flex-start; 
         }
 
-        .contenedor-menus > * {
-            flex-shrink: 0;
-        }
-
         .menu-desplegable {
-            flex: 0 1 auto;
-            min-width: 100px; 
+            flex: 0 0 auto;
+            width: auto; 
             padding: 12px 10px; 
             border-radius: 8px;
             border: 1px solid #ced4da;
@@ -67,8 +62,14 @@
             color: #495057;
             background-color: #f8f9fa;
             cursor: pointer;
-            outline: none;
-            transition: all 0.3s;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Para que al abrirlo se vea bien en algunos navegadores */
+        .menu-desplegable option {
+            width: auto;
         }
 
         .menu-desplegable:hover {
@@ -76,14 +77,14 @@
             background-color: #ffffff;
         }
 
-        /* --- NUEVO ESTILO: MENÚ SELECCIONADO --- */
+        /* Este color se aplicará al menú que contiene el problema que se está leyendo actualmente */
         .menu-desplegable.menu-activo {
             background-color: #3498db;
             color: white;
             border-color: #2980b9;
             box-shadow: 0 0 8px rgba(52, 152, 219, 0.4);
         }
-        
+
         /* --- ZONA INFERIOR --- */
         .zona-lectura {
             flex: 1 1 auto; 
@@ -173,42 +174,58 @@
     <script src="datos.js"></script>
 
     <script>
+
+        function ajustarAnchoSoloTitulo(select) {
+            // Siempre medimos el texto de la primera opción (el título del menú)
+            const textoTitulo = select.options[0].text;
+            
+            const font = window.getComputedStyle(select).font;
+            const canvas = document.createElement("canvas");
+            const context = canvas.getContext("2d");
+            context.font = font;
+            const width = context.measureText(textoTitulo).width;
+            
+            // Asignamos el ancho fijo del título + espacio para la flecha
+            select.style.width = (width + 45) + "px";
+        }
+
         function inicializarMenus() {
-            if (typeof baseDatosProblemas === 'undefined') {
-                document.getElementById('mensaje-inicial').innerHTML = "Error: datos.js no encontrado.";
-                return;
-            }
+            if (typeof baseDatosProblemas === 'undefined') return;
 
             const todosLosMenus = document.querySelectorAll('.menu-desplegable');
 
             for (const categoria in baseDatosProblemas) {
                 const selectMenu = document.getElementById(`menu-${categoria}`);
                 if (selectMenu) {
+                    // Rellenar las opciones desde datos.js
                     baseDatosProblemas[categoria].forEach((prob, index) => {
                         const opcion = document.createElement('option');
                         opcion.value = index; 
-                        opcion.innerHTML = prob.titulo;
+                        opcion.text = prob.titulo; 
                         selectMenu.appendChild(opcion);
                     });
 
+                    // Ajustar ancho al título inicial
+                    ajustarAnchoSoloTitulo(selectMenu);
+
                     selectMenu.addEventListener('change', function() {
                         if (this.value !== "") {
+                            // 1. Obtenemos los datos del problema antes de resetear el menú
                             const prob = baseDatosProblemas[categoria][this.value];
                             
-                            // --- LÓGICA DE RESALTADO ---
-                            // 1. Quitar clase activo de todos los menús
-                            todosLosMenus.forEach(m => m.classList.remove('menu-activo'));
-                            // 2. Añadir clase activo al menú actual
-                            this.classList.add('menu-activo');
-                            
+                            // 2. Pintamos el problema en el visor central
                             mostrarEnunciado(prob.titulo, prob.enunciado, prob.solucion);
                             
-                            // Resetear los otros selects para que vuelvan al "index 0" (título de categoría)
-                            todosLosMenus.forEach(menu => {
-                                if (menu !== this) menu.selectedIndex = 0;
-                            });
+                            // 3. AQUÍ EVITAMOS EL CAMBIO DE NOMBRE:
+                            // Forzamos al menú a que vuelva a mostrar el índice 0 (el título)
+                            this.selectedIndex = 0; 
+
+                            // 4. Mantenemos el color para saber cuál está "activo"
+                            todosLosMenus.forEach(m => m.classList.remove('menu-activo'));
+                            this.classList.add('menu-activo');
                         }
                     });
+                    
                 }
             }
         }
