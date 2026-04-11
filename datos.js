@@ -1414,42 +1414,140 @@ const baseDatosProblemas = {
         {
             titulo: "Problema 4: Colisión de carritos",
             enunciado: "Se desea medir la relación entre las masas de 2 carritos, A y B, que colisionan. Para ello, lanzamos el carrito A con una rapidez de 0,7 m/s contra el B, que está en reposo. Tras el impacto, A rebota con una rapidez de 0,3 m/s, mientras que B sale despedido a 0,5 m/s. ¿Cuál de las 2 masas es mayor y en qué proporción?",
-            // solucion: `
-            //     <div class='paso'>
-            //         \\( F \\cdot \\Delta t = m(v_f - v_0) \\implies 200 \\cdot \\Delta t = 0,05(40 - (-20)) \\)<br>
-            //         <span class='resultado'>t = 0,015 s</span>
-            //     </div>
-            // `
+            solucion: `
+                <div class='paso'>
+                    <strong>Paso 1: Identificación de datos y criterio de signos:</strong><br>
+                    Establecemos como sentido positivo la dirección inicial del carrito A.<br>
+                    - <strong>Antes del choque:</strong><br>
+                    \\( v_A = 0,7 \\text{ m/s} \\)<br>
+                    \\( v_B = 0 \\text{ m/s} \\) (está en reposo)<br>
+                    - <strong>Después del choque:</strong><br>
+                    \\( v'_A = -0,3 \\text{ m/s} \\) (signo negativo porque el enunciado dice que "rebota")<br>
+                    \\( v'_B = 0,5 \\text{ m/s} \\) (sale despedido en el sentido original del movimiento)
+                </div>
+
+                <div class='paso'>
+                    <strong>Paso 2: Aplicación del Principio de Conservación del Momento Lineal:</strong><br>
+                    Puesto que no hay fuerzas externas (rozamientos despreciables), el momento lineal total se conserva:<br>
+                    \\[ p_{inicial} = p_{final} \\]
+                    \\[ m_A \\cdot v_A + m_B \\cdot v_B = m_A \\cdot v'_A + m_B \\cdot v'_B \\]
+                    Sustituimos las velocidades conocidas:<br>
+                    \\[ m_A \\cdot 0,7 + m_B \\cdot 0 = m_A \\cdot (-0,3) + m_B \\cdot 0,5 \\]
+                    \\[ 0,7 \\cdot m_A = -0,3 \\cdot m_A + 0,5 \\cdot m_B \\]
+                    Agrupamos los términos con \\( m_A \\) en el lado izquierdo:<br>
+                    \\[ 0,7 \\cdot m_A + 0,3 \\cdot m_A = 0,5 \\cdot m_B \\]
+                    \\[ 1,0 \\cdot m_A = 0,5 \\cdot m_B \\]
+                    Despejamos la relación entre las masas:<br>
+                    \\[ \\frac{m_B}{m_A} = \\frac{1,0}{0,5} = 2 \\]
+                    Esto implica que: \\( m_B = 2 \\cdot m_A \\)<br>
+                    <span class='resultado'>Resultado: La masa del carrito B es mayor. La proporción es de 2 a 1 (el carrito B tiene el doble de masa que el A).</span>
+                </div>
+            `
         },
         {
             titulo: "Problema 5: Patinadores unidos",
             enunciado: "Una patinadora de 50 kg que se mueve a 3 m/s se abraza a un patinador de 70 kg que se movía en sentido contrario a 2 m/s. Determinar la velocidad con que se mueven ambos después de unirse.",
-            // solucion: `
-            //     <div class='paso'>
-            //         \\( F \\cdot \\Delta t = m(v_f - v_0) \\implies 200 \\cdot \\Delta t = 0,05(40 - (-20)) \\)<br>
-            //         <span class='resultado'>t = 0,015 s</span>
-            //     </div>
-            // `
+            solucion: `
+                <div class='paso'>
+                    <strong>Paso 1: Identificación de datos y criterio de signos:</strong><br>
+                    Estableceremos el sentido de la patinadora (3 m/s) como positivo.<br>
+                    - Patinadora (1): \\( m_1 = 50 \\text{ kg} \\), \\( v_1 = 3 \\text{ m/s} \\)<br>
+                    - Patinador (2): \\( m_2 = 70 \\text{ kg} \\), \\( v_2 = -2 \\text{ m/s} \\) (negativo por ir en sentido contrario).<br>
+                    - Masa total tras la unión: \\( M = m_1 + m_2 = 50 + 70 = 120 \\text{ kg} \\)
+                </div>
+
+                <div class='paso'>
+                    <strong>Paso 2: Aplicación del Principio de Conservación del Momento Lineal:</strong><br>
+                    El momento lineal total antes del abrazo debe ser igual al momento lineal del conjunto después de unirse:<br>
+                    \\[ p_{inicial} = p_{final} \\]
+                    \\[ m_1 \\cdot v_1 + m_2 \\cdot v_2 = (m_1 + m_2) \\cdot V_f \\]
+                    \\[ 50 \\cdot 3 + 70 \\cdot (-2) = 120 \\cdot V_f \\]
+                    \\[ 150 - 140 = 120 \\cdot V_f \\]
+                    \\[ 10 = 120 \\cdot V_f \\]
+                    Despejamos \\( V_f \\):<br>
+                    \\[ V_f = \\frac{10}{120} = \\frac{1}{12} \\approx 0,0833 \\text{ m/s} \\]
+                    Como el resultado es positivo, el conjunto se mueve en el sentido original de la patinadora.<br>
+                    <span class='resultado'>Resultado: La velocidad final de la pareja es de aproximadamente 0,083 m/s.</span>
+                </div>
+            `
         },
         {
             titulo: "Problema 6: Cuerpo roto",
             enunciado: "Un cuerpo se mueve con una velocidad de 5 m/s. Si de golpe se rompe en 2 partes iguales, de manera que una de ellas se mueve con una velocidad de 2 m/s en la misma dirección y sentido que el cuerpo original, ¿cuál será la velocidad (módulo, dirección y sentido) de la otra parte?",
-            // solucion: `
-            //     <div class='paso'>
-            //         \\( F \\cdot \\Delta t = m(v_f - v_0) \\implies 200 \\cdot \\Delta t = 0,05(40 - (-20)) \\)<br>
-            //         <span class='resultado'>t = 0,015 s</span>
-            //     </div>
-            // `
+            solucion: `
+                <div class='paso'>
+                    <strong>Paso 1: Definición de masas y velocidades iniciales:</strong><br>
+                    Llamemos \\( M \\) a la masa del cuerpo original y \\( v_0 \\) a su velocidad.<br>
+                    - Masa inicial: \\( M \\)<br>
+                    - Velocidad inicial: \\( v_0 = 5 \\text{ m/s} \\)<br>
+                    Al romperse en dos partes iguales, cada parte tendrá una masa de \\( m = \\frac{M}{2} \\).
+                </div>
+
+                <div class='paso'>
+                    <strong>Paso 2: Planteamiento del Principio de Conservación del Momento Lineal:</strong><br>
+                    El momento lineal antes de la ruptura es igual a la suma de los momentos lineales de las partes después de la ruptura:<br>
+                    \\[ p_{inicial} = p_{final} \\]
+                    \\[ M \\cdot v_0 = m_1 \\cdot v_1 + m_2 \\cdot v_2 \\]
+                    Sustituimos las masas por \\( M/2 \\):<br>
+                    \\[ M \\cdot 5 = \\frac{M}{2} \\cdot v_1 + \\frac{M}{2} \\cdot v_2 \\]
+                    Podemos simplificar la masa \\( M \\) en toda la ecuación dividiendo por ella:<br>
+                    \\[ 5 = \\frac{1}{2} \\cdot v_1 + \\frac{1}{2} \\cdot v_2 \\]
+                    Multiplicamos toda la ecuación por 2 para eliminar denominadores:<br>
+                    \\[ 10 = v_1 + v_2 \\]<br>
+                    Sabemos que una parte se mueve a \\( v_1 = 2 \\text{ m/s} \\) en el mismo sentido (positivo).
+                    Cálculo de la velocidad de la segunda parte:<br>
+                    \\[ 10 = 2 + v_2 \\]
+                    \\[ v_2 = 10 - 2 = 8 \\text{ m/s} \\]
+                    <strong>Análisis del resultado:</strong><br>
+                    - <strong>Módulo:</strong> 8 m/s.<br>
+                    - <strong>Dirección:</strong> La misma que el cuerpo original (horizontal).<br>
+                    - <strong>Sentido:</strong> El mismo que el cuerpo original (ya que el signo es positivo).<br>
+                    <span class='resultado'>Resultado: La otra parte se mueve a 8 m/s en la misma dirección y sentido.</span>
+                </div>
+            `
         },
         {
             titulo: "Problema 7: Desintegración de partícula",
             enunciado: "Una partícula de 4 g de masa estalla desintegrándose en tres trozos de 2, 1 y 1 g respectivamente que salen despedidos en las direcciones indicadas en la figura. Determinar las velocidades de las dos masas de 1 g. <br> <br> <div style='text-align: center; margin-bottom: 20px;'> <img src='img/mom_7.png' style='max-width: 40%;height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);'> </div>",
-            // solucion: `
-            //     <div class='paso'>
-            //         \\( F \\cdot \\Delta t = m(v_f - v_0) \\implies 200 \\cdot \\Delta t = 0,05(40 - (-20)) \\)<br>
-            //         <span class='resultado'>t = 0,015 s</span>
-            //     </div>
-            // `
+            solucion: `
+                <div class='paso'>
+                    <strong>Paso 1: Identificación de datos y vectores:</strong><br>
+                    Suponemos la partícula inicialmente en reposo (\\( p_{total} = 0 \\)). Definimos el sistema de ejes:<br>
+                    - Trozo 1 (\\( m = 2 \\text{ g} \\)): \\( v = 600 \\text{ m/s} \\) hacia la izquierda (eje X negativo).<br>
+                    - Trozo 2 (\\( m_1 = 1 \\text{ g} \\)): Velocidad \\( v_1 \\) a \\( 30^{\\circ} \\) sobre la horizontal.<br>
+                    - Trozo 3 (\\( m_2 = 1 \\text{ g} \\)): Velocidad \\( v_2 \\) a \\( 45^{\\circ} \\) bajo la horizontal.
+                <br> <br> <div style='text-align: center; margin-bottom: 20px;'> <img src='img/mom_7a.png' style='max-width: 40%;height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);'> </div>
+                </div>
+
+                <div class='paso'>
+                    <strong>Paso 2: Ecuación de conservación en el eje Y:</strong><br>
+                    La cantidad de movimiento total en el eje vertical debe ser cero:<br>
+                    \\[ 0 = m_1 \\cdot v_1 \\cdot \\text{sen}(30^{\\circ}) - m_2 \\cdot v_2 \\cdot \\text{sen}(45^{\\circ}) \\]
+                    Sustituimos las masas (1 g cada una):<br>
+                    \\[ 1 \\cdot v_1 \\cdot 0,5 = 1 \\cdot v_2 \\cdot \\frac{\\sqrt{2}}{2} \\implies v_1 \\cdot 0,5 = v_2 \\cdot 0,707 \\]
+                    \\[ v_1 = 1,414 \\cdot v_2 \\quad \\text{(Ecuación 1)} \\]
+                </div>
+
+                <div class='paso'>
+                    <strong>Paso 3: Ecuación de conservación en el eje X:</strong><br>
+                    La cantidad de movimiento total en el eje horizontal debe ser cero:<br>
+                    \\[0 = -m \\cdot 600 + m_1 \\cdot v_1 \\cdot \\cos(30^{\\circ}) + m_2 \\cdot v_2 \\cdot \\cos(45^{\\circ}) \\]
+                    Sustituimos los valores conocidos:<br>
+                    \\[ -2 \\cdot 600 + 1 \\cdot v_1 \\cdot 0,866 + 1 \\cdot v_2 \\cdot 0,707 = 0 \\]
+                    \\[ 0,866 \\cdot v_1 + 0,707 \\cdot v_2 = 1200 \\quad \\text{(Ecuación 2)} \\]
+                </div>
+
+                <div class='paso'>
+                    <strong>Paso 4: Resolución del sistema:</strong><br>
+                    Sustituimos la Ecuación 1 en la Ecuación 2:<br>
+                    \\[ 0,866 \\cdot (1,414 \\cdot v_2) + 0,707 \\cdot v_2 = 1200 \\]
+                    \\[ 1,224 \\cdot v_2 + 0,707 \\cdot v_2 = 1200 \\]
+                    \\[ 1,931 \\cdot v_2 = 1200 \\implies v_2 = \\frac{1200}{1,931} \\approx 621,44 \\text{ m/s} \\]
+                    Ahora hallamos \\( v_1 \\) de la Ecuación 1:<br>
+                    \\[ v_1 = 1,414 \\cdot 621,44 \\approx 878,72 \\text{ m/s} \\]
+                    <span class='resultado'>Resultado: Las velocidades son \\( v_1 \\approx 878,72 \\text{ m/s} \\) y \\( v_2 \\approx 621,44 \\text{ m/s} \\).</span>
+                </div>
+            `
         }
     ]
 };
