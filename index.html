@@ -109,6 +109,30 @@
             margin-top: 50px;
         }
 
+        .contenedor-flex {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap; /* Para que se adapte en móviles */
+        }
+        .columna-texto {
+            flex: 1;
+            min-width: 300px;
+        }
+        .columna-imagen {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+        .columna-imagen img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        }
+
+
+
         #contenido-problema { display: none; }
         #titulo-visor { color: #2c3e50; border-bottom: 2px solid #eee; padding-bottom: 15px; margin-top: 0; }
         #texto-visor { font-size: 20px; line-height: 1.8; margin-top: 25px; } 

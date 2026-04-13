@@ -681,17 +681,27 @@ const baseDatosProblemas = {
         },        
         {
             titulo: "Problema 4: Máquina de Atwood",
-            enunciado: "En una grúa cuelgan de una cuerda inextensible dos masas: \\( m_1 = 400 \\text{ g} \\) y \\( m_2 = 500 \\text{ g} \\). Determina: <br> a) Sentido del movimiento. <br> b) Tensión de la cuerda. <br> c) Aceleración del sistema. <br> d) Fuerza fundamental implicada y sus bosones.",
+            enunciado: "Una grúa funciona como la denominada máquina de Atwood. Sobre la polea de una grúa cuelgan de los extremos de una cuerda inextensible y de masa despreciable dos pesas: una de masa 400 g y otra de masa 500 g. Determina: <br> a) Indica en qué sentido se mueven las masas. <br>  b) ¿Cuál es la tensión de la cuerda? <br> c) ¿Con que aceleración se moverán? <br> d) Indica la fuerza fundamental implicada en la fuerza tensión y nombra sus bosones.",
             solucion: `
-                <div class='paso'>
-                    <strong>Paso 1: Análisis de datos y conversión al S.I.:</strong><br>
-                    Primero, pasamos las masas a kilogramos:<br>
-                    - Masa 1: \\( m_1 = 400 \\text{ g} = 0,4 \\text{ kg} \\)<br>
-                    - Masa 2: \\( m_2 = 500 \\text{ g} = 0,5 \\text{ kg} \\)<br>
-                    - Gravedad: \\( g = 9,8 \\text{ m/s}^2 \\)<br>
-                    Pesos respectivos:<br>
-                    - \\( P_1 = 0,4 \\cdot 9,8 = 3,92 \\text{ N} \\)<br>
-                    - \\( P_2 = 0,5 \\cdot 9,8 = 4,90 \\text{ N} \\)
+
+                <div class="contenedor-flex">
+                    
+                    <div class="columna-texto">
+                        <strong>Paso 1: Análisis de datos y conversión al S.I.:</strong><br>
+                        Primero, pasamos las masas a kilogramos:<br>
+                        
+                        - Masa 1: \\( m_1 = 500 \\text{ g} = 0,5 \\text{ kg} \\)<br>
+                        - Masa 2: \\( m_2 = 400 \\text{ g} = 0,4 \\text{ kg} \\)<br>
+                        - Gravedad: \\( g = 9,8 \\text{ m/s}^2 \\)<br>
+                        Pesos respectivos:<br>
+                        - \\( P_1 = 0,5 \\cdot 9,8 = 4,90 \\text{ N} \\)<br>
+                        - \\( P_2 = 0,4 \\cdot 9,8 = 3,92 \\text{ N} \\)
+                    </div>
+
+                    <div class="columna-imagen">
+                        <img src='img/pi_4.png'>
+                    </div>
+
                 </div>
 
                 <div class='paso'>
@@ -699,25 +709,25 @@ const baseDatosProblemas = {
                     En una máquina de Atwood, el sistema se mueve siempre hacia el lado de la masa mayor debido a la diferencia de pesos.<br>
                     
                     <br>
-                    <span class='resultado'>Resultado: La masa de 500 g (\\( m_2 \\)) descenderá, mientras que la masa de 400 g (\\( m_1 \\)) ascenderá.</span>
+                    <span class='resultado'>Resultado: La masa de 500 g (\\( m_1 \\)) descenderá, mientras que la masa de 400 g (\\( m_2 \\)) ascenderá.</span>
                 </div>
 
                 <div class='paso'>
                     <strong>c) ¿Con qué aceleración se moverán?</strong><br>
                     <em>(Resolvemos c antes que b por facilidad algebraica)</em>. Aplicamos la segunda ley de Newton al sistema completo. La fuerza neta es la diferencia de pesos:<br>
                     \\[ F_{neta} = m_{total} \\cdot a \\]
-                    \\[ P_2 - P_1 = (m_1 + m_2) \\cdot a \\]
+                    \\[ P_1 - P_2 = (m_1 + m_2) \\cdot a \\]
                     Sustituimos valores:<br>
-                    \\[ 4,90 - 3,92 = (0,4 + 0,5) \\cdot a \\]
+                    \\[ 4,90 - 3,92 = (0,5 + 0,4) \\cdot a \\]
                     \\[ 0,98 = 0,9 \\cdot a \\implies a = \\frac{0,98}{0,9} \\approx 1,089 \\text{ m/s}^2 \\]
                     <span class='resultado'>Resultado: La aceleración es de \\( 1,09 \\text{ m/s}^2 \\).</span>
                 </div>
 
                 <div class='paso'>
                     <strong>b) ¿Cuál es la tensión de la cuerda?</strong><br>
-                    Analizamos una de las masas por separado (por ejemplo, la masa \\( m_1 \\) que sube):<br>
-                    \\[ T - P_1 = m_1 \\cdot a \\]
-                    \\[ T = P_1 + (m_1 \\cdot a) \\]
+                    Analizamos una de las masas por separado (por ejemplo, la masa \\( m_2 \\) que sube):<br>
+                    \\[ T - P_2 = m_2 \\cdot a \\]
+                    \\[ T = P_2 + (m_2 \\cdot a) \\]
                     \\[ T = 3,92 + (0,4 \\cdot 1,089) = 3,92 + 0,4356 \\]
                     <span class='resultado'>Resultado: La tensión de la cuerda es de \\( 4,356 \\text{ N} \\).</span>
                 </div>
