@@ -1519,7 +1519,7 @@ const baseDatosProblemas = {
         },
         {
             titulo: "Problema 7: Desintegración de partícula",
-            enunciado: "Una partícula de 4 g de masa estalla desintegrándose en tres trozos de 2, 1 y 1 g respectivamente que salen despedidos en las direcciones indicadas en la figura. Determinar las velocidades de las dos masas de 1 g. <br> <br> <div style='text-align: center; margin-bottom: 20px;'> <img src='img/mom_7.png' style='width: 50rem; max-width: 100%;height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);'> </div>",
+            enunciado: "Una partícula de 4 g de masa estalla desintegrándose en tres trozos de 2, 1 y 1 g respectivamente que salen despedidos en las direcciones indicadas en la figura. Determinar las velocidades de las dos masas de 1 g. <br> <br> <div style='text-align: center; margin-bottom: 20px;'> <img src='img/mom_7.png' style='width: 25rem; max-width: 100%;height: auto; border-radius: 8px; box-shadow: 0px 4px 8px rgba(0,0,0,0.1);'> </div>",
             solucion: `
                 <div class='paso'>
                     <strong>Paso 1: Identificación de datos y vectores:</strong><br>
